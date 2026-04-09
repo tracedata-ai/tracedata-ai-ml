@@ -1,0 +1,32 @@
+{
+  "model_type": "xgboost",
+  "data_generator": "synthetic",
+  "features_used": [
+    "avg_accel_g",
+    "avg_accel_std",
+    "max_decel_g",
+    "total_harsh_brakes",
+    "total_harsh_accels",
+    "avg_lateral_g",
+    "max_lateral_g",
+    "total_harsh_corners",
+    "avg_speed_kmh",
+    "avg_speed_std",
+    "max_speed_kmh",
+    "avg_jerk",
+    "avg_jerk_std",
+    "max_jerk",
+    "avg_rpm",
+    "max_rpm",
+    "total_idle_seconds",
+    "total_over_revs"
+  ],
+  "timestamp": "2026-04-10T07:07:45.885208",
+  "cv_scores": [
+    0.8511607876831164,
+    0.8204235106963746,
+    0.9048465930018377,
+    0.8777382006856945,
+    0.8342289764291259
+  ]
+}

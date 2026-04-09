@@ -1,0 +1,61 @@
+# 18-feature synthetic trip pipeline (src.mlops.training_pipeline).
+# Telematics-style aggregates — not the same as production 3-feature scoring.
+
+mlflow:
+  tracking_uri: ./mlruns
+  experiment_name: smoothness-scoring-synthetic-18f
+
+experiment:
+  name: smoothness-scoring-synthetic-18f
+
+data:
+  random_seed: 42
+  generation:
+    trip_duration_minutes:
+      min: 20
+      max: 120
+    driver_styles:
+      smooth: 0.35
+      normal: 0.40
+      jerky: 0.15
+      unsafe: 0.10
+
+environment:
+  dev:
+    num_drivers: 20
+    trips_per_driver: 15
+    test_size: 0.2
+    quick_mode: false
+  prod:
+    num_drivers: 100
+    trips_per_driver: 50
+    test_size: 0.15
+    quick_mode: false
+
+model:
+  xgboost:
+    n_estimators: 200
+    learning_rate: 0.05
+    max_depth: 6
+    subsample: 0.85
+    colsample_bytree: 0.85
+    random_state: 42
+    objective: reg:squarederror
+  quality_gate:
+    min_r2_score: 0.85
+    min_rmse: 15.0
+
+cross_validation:
+  n_splits: 5
+
+evaluation:
+  compute_shap_values: false
+  shap_sample_size: 50
+
+reproducibility:
+  numpy_seed: 42
+
+output:
+  model_dir: models
+  reports_dir: reports
+  data_dir: data
