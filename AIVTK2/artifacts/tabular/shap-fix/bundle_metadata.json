@@ -1,0 +1,33 @@
+{
+  "framework": "AIVT2 tabular input bundle",
+  "generated_at_utc": "2026-04-10T15:18:04.323175+00:00",
+  "bundle_name": "shap-fix",
+  "model": {
+    "path": "model\\smoothness_model.joblib",
+    "serialization": "joblib"
+  },
+  "datasets": {
+    "testing_dataset": "data\\testing_dataset.sav",
+    "testing_dataset_with_sensitive": "data\\testing_dataset_with_sensitive.sav",
+    "ground_truth_dataset": "data\\ground_truth_dataset.sav",
+    "background_dataset": "data\\background_dataset.sav",
+    "serialization": "pickle (.sav)",
+    "target_column": "smoothness_label",
+    "feature_columns": [
+      "accel_fluidity",
+      "driving_consistency",
+      "comfort_zone_percent"
+    ],
+    "sensitive_columns_available_in": "testing_dataset_with_sensitive.sav",
+    "sensitive_columns": [
+      "age",
+      "years_experience"
+    ]
+  },
+  "generation_config": {
+    "n_samples": 120,
+    "background_rows": 40,
+    "window_minutes": 10,
+    "random_seed": 42
+  }
+}

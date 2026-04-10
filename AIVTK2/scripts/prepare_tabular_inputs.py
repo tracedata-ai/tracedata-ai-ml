@@ -93,7 +93,10 @@ def main() -> None:
     )
 
     feature_cols = list(SMOOTHNESS_FEATURE_COLUMNS)
-    test_df = df[feature_cols + ["age", "years_experience"]].copy()
+    # SHAP/explainability plugins require test data schema aligned to model features.
+    # Keep an additional fairness-oriented dataset with sensitive attributes separately.
+    test_df = df[feature_cols].copy()
+    test_with_sensitive_df = df[feature_cols + ["age", "years_experience"]].copy()
     gt_df = df[["smoothness_label"]].copy()
     bg_df = df[feature_cols].sample(
         n=min(int(args.background_rows), len(df)),
@@ -101,9 +104,11 @@ def main() -> None:
     )
 
     test_path = data_dir / "testing_dataset.sav"
+    test_sensitive_path = data_dir / "testing_dataset_with_sensitive.sav"
     gt_path = data_dir / "ground_truth_dataset.sav"
     bg_path = data_dir / "background_dataset.sav"
     test_df.to_pickle(test_path)
+    test_with_sensitive_df.to_pickle(test_sensitive_path)
     gt_df.to_pickle(gt_path)
     bg_df.to_pickle(bg_path)
 
@@ -121,12 +126,14 @@ def main() -> None:
         },
         "datasets": {
             "testing_dataset": str(test_path.relative_to(bundle_dir)),
+            "testing_dataset_with_sensitive": str(test_sensitive_path.relative_to(bundle_dir)),
             "ground_truth_dataset": str(gt_path.relative_to(bundle_dir)),
             "background_dataset": str(bg_path.relative_to(bundle_dir)),
             "serialization": "pickle (.sav)",
             "target_column": "smoothness_label",
             "feature_columns": feature_cols,
-            "sensitive_columns_present_in_testing_data": ["age", "years_experience"],
+            "sensitive_columns_available_in": "testing_dataset_with_sensitive.sav",
+            "sensitive_columns": ["age", "years_experience"],
         },
         "generation_config": {
             "n_samples": int(args.n_samples),

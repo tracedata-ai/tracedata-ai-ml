@@ -1,7 +1,7 @@
 {
   "status": "pass",
   "framework": "AIVT2-aligned",
-  "generated_at_utc": "2026-04-10T08:12:37.545250+00:00",
+  "generated_at_utc": "2026-04-10T15:07:37.287478+00:00",
   "run_context": {
     "run_id": "394dcae11ce544eda6610b7f3719121b",
     "tracking_uri": "./mlruns",
@@ -13,11 +13,11 @@
       "protected_attribute": "age>=35",
       "favorable_threshold": 80.0,
       "metrics": {
-        "disparate_impact": 0.9653739612188366,
-        "statistical_parity_difference": -0.016046213093709905,
-        "privileged_favorable_rate": 0.4634146341463415,
-        "unprivileged_favorable_rate": 0.4473684210526316,
-        "sample_count": 120
+        "disparate_impact": 1.1175592770684795,
+        "statistical_parity_difference": 0.051628406546394556,
+        "privileged_favorable_rate": 0.4391691394658754,
+        "unprivileged_favorable_rate": 0.49079754601226994,
+        "sample_count": 500
       },
       "thresholds": {
         "min_disparate_impact": 0.8,
@@ -27,13 +27,13 @@
     "explainability": {
       "status": "pass",
       "metrics": {
-        "mean_abs_additivity_error": 1.678940219183763e-05,
-        "max_abs_additivity_error": 3.361701965332031e-05,
-        "sample_count": 120,
+        "mean_abs_additivity_error": 1.6416385769844054e-05,
+        "max_abs_additivity_error": 4.291534423828125e-05,
+        "sample_count": 500,
         "global_mean_abs_attribution": {
-          "accel_fluidity": 4.381398032729824,
-          "driving_consistency": 3.7615339821980647,
-          "comfort_zone_percent": 17.91858504762252
+          "accel_fluidity": 4.5187562991902235,
+          "driving_consistency": 3.8072601943612097,
+          "comfort_zone_percent": 18.39955835479498
         }
       },
       "thresholds": {
@@ -45,9 +45,9 @@
       "status": "pass",
       "method": "feature_noise_perturbation",
       "metrics": {
-        "mean_abs_score_delta": 3.832493225733439,
-        "max_abs_score_delta": 16.949535369873047,
-        "sample_count": 120
+        "mean_abs_score_delta": 4.294305430412292,
+        "max_abs_score_delta": 21.001419067382812,
+        "sample_count": 500
       },
       "thresholds": {
         "max_mean_abs_score_delta": 8.0,
@@ -55,9 +55,9 @@
       }
     },
     "regression_snapshot": {
-      "mae": 1.166810538977194,
-      "r2": 0.9948071438976915,
-      "sample_count": 120
+      "mae": 1.1582375889377428,
+      "r2": 0.995162306518549,
+      "sample_count": 500
     }
   }
 }

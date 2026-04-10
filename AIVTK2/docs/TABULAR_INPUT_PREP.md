@@ -11,6 +11,7 @@ Reference:
 For each bundle:
 
 - `data/testing_dataset.sav` (pickle DataFrame)
+- `data/testing_dataset_with_sensitive.sav` (pickle DataFrame with sensitive columns)
 - `data/ground_truth_dataset.sav` (pickle DataFrame, target column only)
 - `data/background_dataset.sav` (pickle DataFrame, representative feature rows)
 - `model/smoothness_model.joblib` (model file copy)
@@ -45,6 +46,7 @@ uv run python AIVTK2/scripts/prepare_tabular_inputs.py --n-samples 500 --backgro
 - Target column:
   - `smoothness_label`
 - Sensitive/context columns included in test data:
+  - Use `testing_dataset_with_sensitive.sav` for fairness-style tests requiring sensitive attributes
   - `age`
   - `years_experience`
 
