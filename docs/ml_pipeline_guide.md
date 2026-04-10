@@ -327,7 +327,7 @@ flowchart TB
         end
 
         subgraph "agent-worker container"
-            WORKER["Celery Worker\n• Feature Engineering\n• XGBoost.predict()\n• SHAP\n• Fairness\n• Behavior Agent"]
+            WORKER["Background worker\n• Feature Engineering\n• XGBoost.predict()\n• SHAP\n• Fairness\n• Behavior Agent"]
         end
 
         DB[("SQLite / PostgreSQL")]
@@ -372,7 +372,7 @@ sequenceDiagram
     participant App as Driver App
     participant API as core-api (FastAPI)
     participant Redis as 🔴 Redis
-    participant Worker as agent-worker (Celery)
+    participant Worker as agent-worker (async jobs)
     participant DB as 🗄️ Database
 
     Note over Driver,Redis: A new trip ends
@@ -406,12 +406,11 @@ graph TD
         SC["scoring.py\nOrchestrates ML + Rules"]
         EX["explain.py\nSHAP stack trace"]
         FA["fairness.py\nCohort comparison"]
-        CA["celery_app.py\nTask queue wiring"]
     end
 
-    subgraph "src/agents/behavior/ — The Voice"
-        AG["agent.py\nConverts JSON to English"]
-        TK["tasks.py\nCelery async wrapper"]
+    subgraph "src/inference/ — Serving"
+        INF["smoothness_inference.py\nPing-window scoring"]
+        DEV["device_trip_scorer.py\nDevice aggregates → trip score"]
     end
 
     subgraph "src/utils/ — The Toolbox"
@@ -439,7 +438,6 @@ graph TD
 | **Inference** | Calling a service method at runtime | `model.predict()` in `scoring.py` |
 | **SHAP (XAI)** | A stack trace for the model's decision | `src/core/explain.py` |
 | **Fairness Auditing** | A/B comparison with population stats | `src/core/fairness.py` |
-| **Celery Worker** | Background job queue worker | `agent-worker` in `docker-compose.yml` |
 | **Synthetic Data** | Mocked unit test data | `src/utils/simulator.py` |
 | **Model Drift** | A memory leak that accumulates over time | *(Future monitoring phase)* |
-| **MLOps** | DevOps — but also managing the model artifact lifecycle | `docker-compose.yml` + Celery |
+| **MLOps** | DevOps — but also managing the model artifact lifecycle | `tracedata-mlops` CLI + MLflow |

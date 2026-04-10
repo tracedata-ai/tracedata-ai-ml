@@ -2,6 +2,72 @@
 
 Vehicle telematics smoothness scoring with XGBoost and per-feature attribution (XGBoost `pred_contribs`, same additive decomposition as SHAP for trees).
 
+// 3 — SMOOTHNESS LOG EVENT (20 min mark)
+```
+{
+  "batch_id": "BAT-6ba7b815-9dad-11d1-80b4-00c04fd430c8",
+  "ping_type": "batch",
+  "source": "telematics_device",
+  "is_emergency": false,
+  "event": {
+    "event_id": "EVT-6ba7b816-9dad-11d1-80b4-00c04fd430c8",
+    "device_event_id": "TEL-6ba7b817-9dad-11d1-80b4-00c04fd430c8",
+    "trip_id": "TRP-2026-a1b2c3d4-e5f6-47g8-h9i0-j1k2l3m4n5o6",
+    "driver_id": "DRV-ANON-7829",
+    "truck_id": "T12345",
+    "batch_id": "BAT-6ba7b815-9dad-11d1-80b4-00c04fd430c8",
+    "event_type": "smoothness_log",
+    "category": "normal_operation",
+    "priority": "low",
+    "timestamp": "2026-03-07T08:20:00Z",
+    "offset_seconds": 1200,
+    "trip_meter_km": 24.8,
+    "odometer_km": 180224.8,
+    "location": { "lat": 1.3485, "lon": 103.8380 },
+    "schema_version": "event_v1",
+    "details": {
+      "sample_count": 600,
+      "window_seconds": 600,
+      "speed": {
+        "mean_kmh": 72.3,
+        "std_dev": 8.1,
+        "max_kmh": 94.0,
+        "variance": 65.61
+      },
+      "longitudinal": {
+        "mean_accel_g": 0.04,
+        "std_dev": 0.12,
+        "max_decel_g": -0.31,
+        "harsh_brake_count": 0,
+        "harsh_accel_count": 0
+      },
+      "lateral": {
+        "mean_lateral_g": 0.02,
+        "max_lateral_g": 0.18,
+        "harsh_corner_count": 0
+      },
+      "jerk": {
+        "mean": 0.008,
+        "max": 0.041,
+        "std_dev": 0.006
+      },
+      "engine": {
+        "mean_rpm": 1820,
+        "max_rpm": 2340,
+        "idle_seconds": 45,
+        "idle_events": 1,
+        "longest_idle_seconds": 38,
+        "over_rev_count": 0,
+        "over_rev_seconds": 0
+      },
+      "incident_event_ids": [],
+      "raw_log_url": "s3://tracedata-sensors/T12345-batch-20260307-0820.bin"
+    },
+    "evidence": null
+  }
+}
+```
+
 ## Core capability
 
 **Score smoothness (0–100)** from a window of pings (e.g. 10 minutes), plus a feature breakdown.
