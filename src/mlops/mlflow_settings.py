@@ -25,4 +25,5 @@ def resolve_tracking_uri(yaml_tracking_uri: str | None) -> str:
 def ensure_mlflow_experiment(experiment_name: str) -> None:
     """Set active experiment, creating it if needed with default MLflow behavior."""
     import mlflow
+
     mlflow.set_experiment(experiment_name)
