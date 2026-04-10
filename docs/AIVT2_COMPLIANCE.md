@@ -114,6 +114,31 @@ Results snapshot:
   - MAE: `1.2130`
   - R2: `0.9945`
 
+### Plain-English interpretation of these numbers
+
+Think of this run as a **health check report card** for the model.
+
+| Metric | Your result | What it means in simple terms |
+|---|---:|---|
+| Overall status | **pass** | The model passed the configured compliance gates in this run. |
+| Fairness: disparate impact | `1.1187` | Very close to balanced between age groups. `1.0` is perfect parity; your threshold is `>= 0.8`. |
+| Fairness: statistical parity difference | `0.0514` | Only about a 5.1 percentage-point difference between groups on favorable outcomes; small gap, within threshold (`<= 0.2`). |
+| Explainability: mean additivity error | `1.72e-05` | Explanations are numerically consistent with predictions; this error is tiny and safely below the limit (`1e-4`). |
+| Robustness: mean abs score delta | `4.3001` | On average, small feature perturbations move the score by about 4.3 points; allowed max is 8.0, so stability is acceptable. |
+| Regression MAE | `1.2130` | Typical prediction error is around 1.2 score points on this synthetic benchmark (lower is better). |
+| Regression R2 | `0.9945` | Model fit is very strong on this benchmark (closer to 1 is better). |
+
+Quick takeaway:
+
+- **Fairness:** no obvious red flag under the selected age split and threshold.
+- **Explainability:** attribution math is stable and trustworthy for this model path.
+- **Robustness:** model is reasonably stable under light noise.
+- **Predictive quality:** very high on this synthetic-style evaluation.
+
+Important caveat:
+
+- These values are from the project’s synthetic evaluation setup. They are useful for CI gating and trend monitoring, but should be re-validated on representative real-world data when available.
+
 ---
 
 ## CI integration

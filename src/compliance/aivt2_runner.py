@@ -161,9 +161,9 @@ def _run_explainability(
         "status": "pass" if passed else "fail",
         "metrics": {
             "mean_abs_additivity_error": mean_abs_error,
-            "max_abs_additivity_error": float(np.max(additivity_errors))
-            if additivity_errors
-            else 0.0,
+            "max_abs_additivity_error": (
+                float(np.max(additivity_errors)) if additivity_errors else 0.0
+            ),
             "sample_count": len(rows),
             "global_mean_abs_attribution": global_importance,
         },
@@ -222,14 +222,14 @@ def _run_robustness(
     }
 
 
-def _regression_snapshot(scorer: SmoothnessInference, rows: Sequence[Mapping[str, Any]]) -> Dict[str, Any]:
+def _regression_snapshot(
+    scorer: SmoothnessInference, rows: Sequence[Mapping[str, Any]]
+) -> Dict[str, Any]:
     feats = [r["features"] for r in rows]
     frame = np.array(
         [[f["accel_fluidity"], f["driving_consistency"], f["comfort_zone_percent"]] for f in feats]
     )
-    y_true = smoothness_label_from_features(
-        np_to_frame(frame)
-    )
+    y_true = smoothness_label_from_features(np_to_frame(frame))
     y_pred = np.array([scorer.predict_from_features(f) for f in feats], dtype=float)
     mae = float(np.mean(np.abs(y_true - y_pred)))
     denom = float(np.sum((y_true - float(np.mean(y_true))) ** 2))
@@ -309,6 +309,42 @@ def _build_markdown_summary(result: Mapping[str, Any]) -> str:
     f_metrics = fairness["metrics"]
     e_metrics = explainability["metrics"]
     r_metrics = robustness["metrics"]
+    f_thr = fairness["thresholds"]
+    e_thr = explainability["thresholds"]
+    r_thr = robustness["thresholds"]
+
+    def _traffic_light(value: float, good_limit: float, direction: str) -> str:
+        # direction: "min" means higher is better, "max" means lower is better.
+        if direction == "min":
+            if value >= good_limit:
+                return "GREEN"
+            if value >= 0.9 * good_limit:
+                return "YELLOW"
+            return "RED"
+        if value <= good_limit:
+            return "GREEN"
+        if value <= 1.1 * good_limit:
+            return "YELLOW"
+        return "RED"
+
+    di_light = _traffic_light(
+        float(f_metrics["disparate_impact"]), float(f_thr["min_disparate_impact"]), "min"
+    )
+    spd_light = _traffic_light(
+        abs(float(f_metrics["statistical_parity_difference"])),
+        float(f_thr["max_abs_statistical_parity_difference"]),
+        "max",
+    )
+    add_light = _traffic_light(
+        float(e_metrics["mean_abs_additivity_error"]),
+        float(e_thr["max_mean_abs_additivity_error"]),
+        "max",
+    )
+    rob_light = _traffic_light(
+        float(r_metrics["mean_abs_score_delta"]),
+        float(r_thr["max_mean_abs_score_delta"]),
+        "max",
+    )
 
     return (
         "# AIVT2-aligned compliance summary\n\n"
@@ -316,6 +352,11 @@ def _build_markdown_summary(result: Mapping[str, Any]) -> str:
         f"- **Run ID:** `{run_ctx['run_id']}`\n"
         f"- **Experiment:** `{run_ctx['experiment_name']}`\n"
         f"- **Generated at (UTC):** `{result['generated_at_utc']}`\n\n"
+        "## Traffic-light view\n\n"
+        f"- Fairness (Disparate Impact): `{di_light}`\n"
+        f"- Fairness (Statistical Parity Difference): `{spd_light}`\n"
+        f"- Explainability (Additivity Error): `{add_light}`\n"
+        f"- Robustness (Mean Score Delta): `{rob_light}`\n\n"
         "## Section status\n\n"
         f"- Fairness: `{fairness['status']}`\n"
         f"- Explainability: `{explainability['status']}`\n"
