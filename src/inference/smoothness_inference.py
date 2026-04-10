@@ -1,14 +1,14 @@
 """
-Reference implementation for the main application repo:
+Production-style ping path: **one trip in, one score + explanation out**.
 
-1. At Docker build: download MLflow artifacts (`model/` + `serving/`).
-2. At runtime: load the XGBoost model, call ``score_window(pings)``.
+1. At deploy: load MLflow artifacts (``model`` + ``serving/``) or local ``.joblib`` + serving dir.
+2. At runtime: call ``score_trip_from_ping_windows(windows)`` where each inner list is the
+   pings for one ~10-minute bucket. A short trip is a single window: ``[pings]``.
 
-Uses XGBoost ``pred_contribs`` for feature attributions (SHAP-compatible decomposition for
-trees). Avoids ``shap.TreeExplainer``, which can fail on XGBoost 3.x base_score serialization.
+Uses XGBoost ``pred_contribs`` (tree SHAP-style decomposition). Avoids ``shap.TreeExplainer``
+on XGBoost 3.x ``base_score`` issues.
 
-Serving image deps: xgboost, numpy, pandas (and feature extraction — here
-``src.core.features.extract_smoothness_features``).
+Deps: xgboost, numpy, pandas, ``src.core.features.extract_smoothness_features``.
 """
 
 from __future__ import annotations
@@ -111,18 +111,89 @@ class SmoothnessInference:
             out[c] = float(contribs[i])
         return out
 
+    def score_trip_from_ping_windows(
+        self,
+        windows: List[List[Mapping[str, Any]]],
+        *,
+        window_weights: Optional[List[float]] = None,
+    ) -> Dict[str, Any]:
+        """
+        End-of-trip API: several 10-minute ping windows → one smoothness score + one explanation.
+
+        ``windows[i]``: pings for window *i*; each ping needs ``acceleration_ms2`` and ``speed_kmh``.
+
+        We score each window with the same 3-feature model, then aggregate with weights
+        (default: each window weighted by its ping count, minimum 1).
+
+        ``explanation.feature_attributions`` is a weighted average of per-window ``pred_contribs``
+        (same sense as ``DeviceAggregateTripScorer`` for device aggregates).
+        """
+        if not windows:
+            raise ValueError("windows must contain at least one ping window")
+        if window_weights is not None and len(window_weights) != len(windows):
+            raise ValueError("window_weights length must match windows")
+
+        scores: List[float] = []
+        weights: List[float] = []
+        bases: List[float] = []
+        feat_rows: List[np.ndarray] = []
+
+        for i, pings in enumerate(windows):
+            if not pings:
+                raise ValueError(
+                    f"windows[{i}] is empty; omit the window or pass placeholder pings"
+                )
+            feat = extract_smoothness_features(list(pings))
+            x = features_dict_to_frame(feat)[self.feature_columns]
+            pred = float(np.clip(self.model.predict(x)[0], 0, 100))
+            contribs = self._pred_contribs_row(x)
+            bias = float(contribs[-1])
+            fc = np.array(
+                [float(contribs[j]) for j in range(len(self.feature_columns))],
+                dtype=float,
+            )
+            w = (
+                float(window_weights[i])
+                if window_weights is not None
+                else max(float(len(pings)), 1.0)
+            )
+            scores.append(pred)
+            weights.append(max(w, 1e-6))
+            bases.append(bias)
+            feat_rows.append(fc)
+
+        w_arr = np.array(weights, dtype=float)
+        w_arr = w_arr / w_arr.sum()
+        trip_score = float(np.dot(scores, w_arr))
+        stack = np.stack(feat_rows)
+        trip_vec = stack.T @ w_arr
+        attributions = {c: float(trip_vec[j]) for j, c in enumerate(self.feature_columns)}
+        trip_base = float(np.dot(bases, w_arr))
+        worst_idx = int(np.argmin(scores))
+
+        return {
+            "trip_smoothness_score": trip_score,
+            "explanation": {
+                "feature_attributions": attributions,
+                "base_value": trip_base,
+                "window_count": len(windows),
+                "worst_window_index": worst_idx,
+                "worst_window_score": float(scores[worst_idx]),
+                "method": "weighted_mean_of_window_pred_contribs",
+            },
+        }
+
     def score_window(self, pings: List[Mapping[str, Any]]) -> Dict[str, Any]:
         """
-        ``pings``: dicts with at least ``acceleration_ms2`` and ``speed_kmh``
-        (same as ``extract_smoothness_features``).
+        Legacy single-window shape (smoothness_score + shap keys). Same math as
+        ``score_trip_from_ping_windows([pings])``.
         """
         feat = extract_smoothness_features(list(pings))
-        score = self.predict_from_features(feat)
-        breakdown = self.explain_features(feat)
-        shap_breakdown = {k: v for k, v in breakdown.items() if k != "base_value"}
+        trip = self.score_trip_from_ping_windows([pings])
+        exp = trip["explanation"]
         return {
-            "smoothness_score": score,
+            "smoothness_score": trip["trip_smoothness_score"],
             "features": feat,
-            "shap": shap_breakdown,
-            "shap_base_value": breakdown["base_value"],
+            "shap": exp["feature_attributions"],
+            "shap_base_value": exp["base_value"],
         }

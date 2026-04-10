@@ -272,8 +272,7 @@ class MLOpsTrainingPipeline:
         }
 
         logger.info(
-            f"   Mean R²: {cv_metrics['cv_r2_mean']:.4f} "
-            f"(±{cv_metrics['cv_r2_std']:.4f})"
+            f"   Mean R²: {cv_metrics['cv_r2_mean']:.4f} " f"(±{cv_metrics['cv_r2_std']:.4f})"
         )
 
         return cv_metrics
@@ -327,9 +326,7 @@ class MLOpsTrainingPipeline:
 
         # Log feature importance
         importance = model.get_booster().get_score(importance_type="weight")
-        importance_file = (
-            Path(self.output_config["reports_dir"]) / "feature_importance.json"
-        )
+        importance_file = Path(self.output_config["reports_dir"]) / "feature_importance.json"
         with open(importance_file, "w") as f:
             json.dump(importance, f, indent=2)
         mlflow.log_artifact(str(importance_file))
@@ -391,15 +388,11 @@ class MLOpsTrainingPipeline:
                 )
                 mlflow.log_param("quality_gate_status", "FAILED")
             else:
-                logger.info(
-                    f"✅ Quality gate PASSED: R²={test_metrics['r2_score']:.4f}"
-                )
+                logger.info(f"✅ Quality gate PASSED: R²={test_metrics['r2_score']:.4f}")
                 mlflow.log_param("quality_gate_status", "PASSED")
 
                 # Save model
-                model_path = (
-                    Path(self.output_config["model_dir"]) / "smoothness_model.joblib"
-                )
+                model_path = Path(self.output_config["model_dir"]) / "smoothness_model.joblib"
                 joblib.dump(model, model_path)
                 logger.info(f"💾 Model saved to {model_path}")
 

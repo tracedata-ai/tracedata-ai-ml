@@ -37,10 +37,7 @@ def resolve_tracking_uri(yaml_tracking_uri: str | None) -> str:
     env_uri = os.environ.get("MLFLOW_TRACKING_URI")
     if env_uri:
         return env_uri
-    if (
-        yaml_tracking_uri
-        and yaml_tracking_uri.strip().lower() not in _TRACKING_AUTO
-    ):
+    if yaml_tracking_uri and yaml_tracking_uri.strip().lower() not in _TRACKING_AUTO:
         return yaml_tracking_uri
     return _sqlite_uri_for_db(MLFLOW_ROOT / "mlflow.db")
 

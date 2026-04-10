@@ -52,7 +52,9 @@ def features_dict_to_frame(row: Mapping[str, Any]) -> pd.DataFrame:
     return pd.DataFrame(data)
 
 
-def frame_to_dict_list(df: pd.DataFrame, columns: Sequence[str] | None = None) -> List[Dict[str, float]]:
+def frame_to_dict_list(
+    df: pd.DataFrame, columns: Sequence[str] | None = None
+) -> List[Dict[str, float]]:
     cols = list(columns) if columns is not None else SMOOTHNESS_FEATURE_COLUMNS
     return df[cols].astype(float).to_dict(orient="records")
 

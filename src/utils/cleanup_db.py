@@ -2,6 +2,7 @@ import sqlite3
 
 from src.core.config import DB_NAME
 
+
 def cleanup():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
@@ -16,7 +17,7 @@ def cleanup():
     if "trip_telemetry" in tables:
         print("🗑️ Dropping legacy table 'trip_telemetry'...")
         cursor.execute("DROP TABLE trip_telemetry;")
-    
+
     # 2. Cleanup orphaned data if any
     # (Optional: ensuring trips points only belong to valid trips)
     # cursor.execute("DELETE FROM telemetry_points WHERE trip_id NOT IN (SELECT trip_id FROM trips)")
@@ -28,6 +29,7 @@ def cleanup():
     conn.commit()
     conn.close()
     print("✅ Database cleanup complete.")
+
 
 if __name__ == "__main__":
     cleanup()

@@ -1,0 +1,48 @@
+# Full test sweep on a schedule (same tests as CI; integration still skips without API).
+name: "CI — scheduled test sweep"
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: ml-scheduled-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  pytest-full:
+    name: Pytest (all non-integration)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - run: uv python install ${{ env.PYTHON_VERSION }}
+
+      - run: uv sync --frozen --extra dev
+
+      - name: Pytest
+        run: |
+          uv run pytest tests/ -v -m "not integration" --tb=short --junitxml=scheduled-junit.xml
+
+      - name: Upload JUnit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scheduled-junit
+          path: scheduled-junit.xml
+          retention-days: 14
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Scheduled pytest" >> "$GITHUB_STEP_SUMMARY"
+          python3 .github/scripts/ci_junit_summary.py "Pytest:scheduled-junit.xml" >> "$GITHUB_STEP_SUMMARY" || true

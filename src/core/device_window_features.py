@@ -94,4 +94,3 @@ def features_row_from_smoothness_log(payload: Envelope) -> Dict[str, float]:
         "total_idle_seconds": float(p["idle_seconds"]),
         "total_over_revs": float(p["over_rev_count"]),
     }
-

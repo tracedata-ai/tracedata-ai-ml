@@ -132,6 +132,7 @@ import joblib
 import mlflow
 import numpy as np
 import pandas as pd
+import shap
 import xgboost as xgb
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
@@ -502,9 +503,7 @@ def train_smoothness_model(
             conn,
         )
         available_cols = [c for c in feature_columns if c in df.columns]
-        print(
-            f"   Found {len(available_cols)}/{len(feature_columns)} features: {available_cols}"
-        )
+        print(f"   Found {len(available_cols)}/{len(feature_columns)} features: {available_cols}")
         feature_columns = available_cols
         feature_selector = ", ".join(feature_columns)
         df = pd.read_sql_query(
@@ -791,13 +790,9 @@ class ExplainableScoringEngine(ScoringEngine):
             self.feature_names = list(training_df.columns)
         except Exception:
             # Fall back to available columns
-            available = pd.read_sql_query(
-                "SELECT * FROM trips LIMIT 1", conn
-            ).columns.tolist()
+            available = pd.read_sql_query("SELECT * FROM trips LIMIT 1", conn).columns.tolist()
             available_features = [f for f in all_features if f in available]
-            feature_selector = (
-                ", ".join(available_features) if available_features else "*"
-            )
+            feature_selector = ", ".join(available_features) if available_features else "*"
             training_df = pd.read_sql_query(
                 f"""
                 SELECT {feature_selector}
@@ -876,9 +871,7 @@ class ExplainableScoringEngine(ScoringEngine):
             contributions[feature_name] = float(shap_values[0, i])
 
         # Sort by absolute impact
-        sorted_contribs = sorted(
-            contributions.items(), key=lambda x: abs(x[1]), reverse=True
-        )
+        sorted_contribs = sorted(contributions.items(), key=lambda x: abs(x[1]), reverse=True)
 
         # Separate positive and negative impacts
         positive = [(f, v) for f, v in sorted_contribs if v > 0]
@@ -1095,9 +1088,7 @@ if __name__ == "__main__":
 
         print("\n📈 Feature Importance Details:")
         print("   Contributions for individual features:")
-        for feature, contrib in result["smoothness_explanation"][
-            "feature_contributions"
-        ].items():
+        for feature, contrib in result["smoothness_explanation"]["feature_contributions"].items():
             direction = "↑" if contrib > 0 else "↓"
             print(f"   {direction} {feature}: {contrib:+.4f}")
 

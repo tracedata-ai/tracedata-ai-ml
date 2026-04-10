@@ -165,31 +165,21 @@ class SyntheticTelemetryGenerator:
                 decel_samples.append(abs(current_accel))
 
             # Check for harsh brake event
-            if (
-                current_accel < -0.6
-                and self.rng.random() < self.params["harsh_brake_prob"]
-            ):
+            if current_accel < -0.6 and self.rng.random() < self.params["harsh_brake_prob"]:
                 harsh_brakes += 1
 
             # Check for harsh accel event
-            if (
-                current_accel > 0.6
-                and self.rng.random() < self.params["harsh_accel_prob"]
-            ):
+            if current_accel > 0.6 and self.rng.random() < self.params["harsh_accel_prob"]:
                 harsh_accels += 1
 
             # Update speed from acceleration
             speed_delta = current_accel * (1.0 / 3.6)  # Convert to km/h
             current_speed += speed_delta
-            current_speed = np.clip(
-                current_speed, 0, self.params["max_speed_bias"] + 20
-            )
+            current_speed = np.clip(current_speed, 0, self.params["max_speed_bias"] + 20)
             speed_samples.append(current_speed)
 
             # Generate lateral G-forces (turning)
-            lateral_g = abs(
-                self.rng.normal(0, 0.05 + self.profile.aggression_factor * 0.1)
-            )
+            lateral_g = abs(self.rng.normal(0, 0.05 + self.profile.aggression_factor * 0.1))
             lateral_g_samples.append(lateral_g)
 
             if lateral_g > 0.3 and self.rng.random() < self.params["harsh_corner_prob"]:
@@ -229,9 +219,7 @@ class SyntheticTelemetryGenerator:
             # Longitudinal (acceleration/braking)
             "longitudinal_mean_accel_g": float(np.mean(accel_samples)),
             "longitudinal_std_dev": float(np.std(accel_samples)),
-            "longitudinal_max_decel_g": float(
-                np.max(decel_samples) if decel_samples else 0.2
-            ),
+            "longitudinal_max_decel_g": float(np.max(decel_samples) if decel_samples else 0.2),
             "longitudinal_harsh_brake_count": int(harsh_brakes),
             "longitudinal_harsh_accel_count": int(harsh_accels),
             # Lateral (cornering)
@@ -250,9 +238,7 @@ class SyntheticTelemetryGenerator:
             "engine_over_rev_count": int(over_revs),
         }
 
-    def generate_trip(
-        self, trip_duration_minutes: int = 90, num_windows: int = 12
-    ) -> List[Dict]:
+    def generate_trip(self, trip_duration_minutes: int = 90, num_windows: int = 12) -> List[Dict]:
         """Generate multiple windows for a single trip."""
         windows = []
         seconds_per_window = trip_duration_minutes * 60 // num_windows
@@ -350,12 +336,8 @@ class SyntheticDataPipeline:
             "avg_accel_g": float(windows_df["longitudinal_mean_accel_g"].mean()),
             "avg_accel_std": float(windows_df["longitudinal_std_dev"].mean()),
             "max_decel_g": float(windows_df["longitudinal_max_decel_g"].max()),
-            "total_harsh_brakes": int(
-                windows_df["longitudinal_harsh_brake_count"].sum()
-            ),
-            "total_harsh_accels": int(
-                windows_df["longitudinal_harsh_accel_count"].sum()
-            ),
+            "total_harsh_brakes": int(windows_df["longitudinal_harsh_brake_count"].sum()),
+            "total_harsh_accels": int(windows_df["longitudinal_harsh_accel_count"].sum()),
             # Lateral
             "avg_lateral_g": float(windows_df["lateral_mean_lateral_g"].mean()),
             "max_lateral_g": float(windows_df["lateral_max_lateral_g"].max()),
@@ -377,9 +359,7 @@ class SyntheticDataPipeline:
 
         return aggregated
 
-    def split_data(
-        self, df: pd.DataFrame
-    ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    def split_data(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         """
         Split data into train/val/test (60/20/20).
 

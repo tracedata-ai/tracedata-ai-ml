@@ -8,9 +8,7 @@ The goal is to confirm that:
 3. Edge cases (empty input, single point) are handled safely
 """
 
-import pytest
 from src.core.features import extract_smoothness_features, detect_safety_events
-
 
 # ─── Fixtures ────────────────────────────────────────────────────────────────
 
@@ -31,51 +29,52 @@ JERKY_TRIP = [
 ]
 
 UNSAFE_TRIP = [
-    {"acceleration_ms2": 0.1, "speed_kmh": 100},   # Speeding
-    {"acceleration_ms2": -0.9, "speed_kmh": 85},   # Harsh brake
-    {"acceleration_ms2": 0.8, "speed_kmh": 80},    # Harsh acceleration
+    {"acceleration_ms2": 0.1, "speed_kmh": 100},  # Speeding
+    {"acceleration_ms2": -0.9, "speed_kmh": 85},  # Harsh brake
+    {"acceleration_ms2": 0.8, "speed_kmh": 80},  # Harsh acceleration
     {"acceleration_ms2": 0.1, "speed_kmh": 75},
 ]
 
 
 # ─── Smoothness Feature Tests ─────────────────────────────────────────────────
 
+
 class TestExtractSmoothnessFeatures:
 
     def test_smooth_driver_has_low_fluidity(self):
         """A driver with gentle, consistent acceleration should have low jerk (fluidity)."""
         features = extract_smoothness_features(SMOOTH_TRIP)
-        assert features["accel_fluidity"] < 0.5, (
-            f"Expected low fluidity for smooth driver, got {features['accel_fluidity']}"
-        )
+        assert (
+            features["accel_fluidity"] < 0.5
+        ), f"Expected low fluidity for smooth driver, got {features['accel_fluidity']}"
 
     def test_jerky_driver_has_high_fluidity(self):
         """A driver with sudden acceleration changes should have high fluidity (jerk)."""
         features = extract_smoothness_features(JERKY_TRIP)
-        assert features["accel_fluidity"] > 1.0, (
-            f"Expected high fluidity for jerky driver, got {features['accel_fluidity']}"
-        )
+        assert (
+            features["accel_fluidity"] > 1.0
+        ), f"Expected high fluidity for jerky driver, got {features['accel_fluidity']}"
 
     def test_smooth_driver_high_comfort_zone(self):
         """A smooth driver stays mostly in the comfort band [-0.5, +0.5]."""
         features = extract_smoothness_features(SMOOTH_TRIP)
-        assert features["comfort_zone_percent"] > 80.0, (
-            f"Expected high comfort zone for smooth driver, got {features['comfort_zone_percent']}"
-        )
+        assert (
+            features["comfort_zone_percent"] > 80.0
+        ), f"Expected high comfort zone for smooth driver, got {features['comfort_zone_percent']}"
 
     def test_jerky_driver_low_comfort_zone(self):
         """A jerky driver spends most time outside the comfort band."""
         features = extract_smoothness_features(JERKY_TRIP)
-        assert features["comfort_zone_percent"] == 0.0, (
-            f"Expected 0% comfort zone for fully jerky driver, got {features['comfort_zone_percent']}"
-        )
+        assert (
+            features["comfort_zone_percent"] == 0.0
+        ), f"Expected 0% comfort zone for fully jerky driver, got {features['comfort_zone_percent']}"
 
     def test_smooth_has_low_consistency(self):
         """A consistent driver should have low std_dev in acceleration."""
         features = extract_smoothness_features(SMOOTH_TRIP)
-        assert features["driving_consistency"] < 0.1, (
-            f"Expected low consistency for smooth driver, got {features['driving_consistency']}"
-        )
+        assert (
+            features["driving_consistency"] < 0.1
+        ), f"Expected low consistency for smooth driver, got {features['driving_consistency']}"
 
     def test_all_features_present(self):
         """The output must always contain exactly the 3 expected feature keys."""
@@ -99,6 +98,7 @@ class TestExtractSmoothnessFeatures:
 
 
 # ─── Safety Event Detection Tests ────────────────────────────────────────────
+
 
 class TestDetectSafetyEvents:
 

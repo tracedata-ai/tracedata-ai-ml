@@ -48,9 +48,7 @@ def mock_scorer():
     n = len(DEVICE_AGGREGATE_FEATURE_COLUMNS)
     booster = MagicMock()
     # pred_contribs: one row, features + bias
-    booster.predict = MagicMock(
-        return_value=np.array([[0.1] * n + [0.5]], dtype=float)
-    )
+    booster.predict = MagicMock(return_value=np.array([[0.1] * n + [0.5]], dtype=float))
     model = MagicMock()
     model.predict = MagicMock(side_effect=lambda x: np.array([70.0]))
     model.get_booster.return_value = booster

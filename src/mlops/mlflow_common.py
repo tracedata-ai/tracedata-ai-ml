@@ -29,7 +29,9 @@ from src.core.model_contract import (
 logger = logging.getLogger(__name__)
 
 
-def regression_signature(feature_columns: List[str], output_name: str = "smoothness_score") -> ModelSignature:
+def regression_signature(
+    feature_columns: List[str], output_name: str = "smoothness_score"
+) -> ModelSignature:
     inputs = Schema([ColSpec("double", c) for c in feature_columns])
     outputs = Schema([ColSpec("double", output_name)])
     return ModelSignature(inputs=inputs, outputs=outputs)

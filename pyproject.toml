@@ -24,6 +24,14 @@ dependencies = [
 [project.scripts]
 tracedata-mlops = "src.mlops.cli:entrypoint"
 
+[project.optional-dependencies]
+dev = [
+    "bandit[toml]>=1.8.0",
+    "black>=24.10.0",
+    "mypy>=1.13.0",
+    "ruff>=0.8.0",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
 
@@ -31,3 +39,14 @@ packages = ["src"]
 markers = [
     "integration: requires a running external service (e.g. API on localhost:8000)",
 ]
+
+[tool.black]
+target-version = ["py311"]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+
+[tool.bandit]
+# Column lists are built from internal feature name lists, not user input.
+skips = ["B608"]

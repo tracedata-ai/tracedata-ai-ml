@@ -15,8 +15,7 @@ SMOOTHNESS_MODEL_PATH = MODEL_PATH
 MLRUNS_DIR = os.path.join(PROJECT_ROOT, "mlruns")  # legacy file-store path only
 
 from src.mlops.mlflow_settings import (  # noqa: E402
-    MLFLOW_ROOT,
-    ensure_mlflow_experiment,
+    ensure_mlflow_experiment,  # noqa: F401 — re-exported for trainer / smoothness_ml_engine
     resolve_tracking_uri,
 )
 
@@ -28,9 +27,7 @@ MLFLOW_EXPERIMENT_PRODUCTION = os.environ.get(
 MLFLOW_EXPERIMENT_SYNTHETIC_18 = os.environ.get(
     "MLFLOW_EXPERIMENT_SYNTHETIC_18", "smoothness-scoring-synthetic-18f"
 )
-MLFLOW_EXPERIMENT_SQLITE = os.environ.get(
-    "MLFLOW_EXPERIMENT_SQLITE", "smoothness-sqlite-trips"
-)
+MLFLOW_EXPERIMENT_SQLITE = os.environ.get("MLFLOW_EXPERIMENT_SQLITE", "smoothness-sqlite-trips")
 MLFLOW_EXPERIMENT_ML_ENGINE = os.environ.get(
     "MLFLOW_EXPERIMENT_ML_ENGINE", "smoothness-ml-engine-sqlite"
 )

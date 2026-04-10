@@ -1,0 +1,81 @@
+# Manual only: create a GitHub Release whose body is your release notes and whose assets are models/*.joblib.
+# No workflow artifacts, no zip. CI stays in .github/workflows/ci.yml.
+name: "Release — GitHub (model + notes)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: "Version label for the release title (e.g. 0.2.1)"
+        required: true
+        type: string
+      git_tag:
+        description: "Git tag to create (e.g. model-v0.2.1)"
+        required: true
+        type: string
+      release_notes:
+        description: "Release notes (Markdown) — becomes the GitHub Release description"
+        required: true
+        type: string
+      run_tests:
+        description: "Run pytest (-m 'not integration') before publishing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    env:
+      PYTHON_VERSION: "3.11"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        if: inputs.run_tests
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Set up Python
+        if: inputs.run_tests
+        run: uv python install ${{ env.PYTHON_VERSION }}
+
+      - name: Install deps & test
+        if: inputs.run_tests
+        run: |
+          uv sync --frozen --extra dev
+          uv run pytest -v -m "not integration" tests/
+
+      - name: Verify model binaries
+        id: models
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(models/*.joblib)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "::error::No models/*.joblib — commit your trained .joblib under models/ first."
+            exit 1
+          fi
+          {
+            echo "paths<<EOF"
+            printf '%s\n' "${files[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.git_tag }}
+          name: Smoothness model ${{ inputs.release_version }}
+          body: |
+            ${{ inputs.release_notes }}
+
+            ---
+            _Commit [`${{ github.sha }}`](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}) · `${{ github.repository }}`_
+          files: ${{ steps.models.outputs.paths }}
+          generate_release_notes: false

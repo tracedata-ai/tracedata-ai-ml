@@ -1,5 +1,5 @@
 import numpy as np
-import json
+
 
 def extract_smoothness_features(telemetry_points):
     """
@@ -9,11 +9,7 @@ def extract_smoothness_features(telemetry_points):
     3. Comfort Zone % (Percentage of points in [-0.5, 0.5] range)
     """
     if not telemetry_points:
-        return {
-            "accel_fluidity": 0.0,
-            "driving_consistency": 0.0,
-            "comfort_zone_percent": 0.0
-        }
+        return {"accel_fluidity": 0.0, "driving_consistency": 0.0, "comfort_zone_percent": 0.0}
 
     # Extract all acceleration values
     accelerations = np.array([p["acceleration_ms2"] for p in telemetry_points])
@@ -40,8 +36,9 @@ def extract_smoothness_features(telemetry_points):
     return {
         "accel_fluidity": round(accel_fluidity, 4),
         "driving_consistency": round(driving_consistency, 4),
-        "comfort_zone_percent": round(comfort_zone_percent, 2)
+        "comfort_zone_percent": round(comfort_zone_percent, 2),
     }
+
 
 def detect_safety_events(telemetry_points):
     """
@@ -53,38 +50,39 @@ def detect_safety_events(telemetry_points):
     harsh_braking_count = 0
     harsh_acceleration_count = 0
     speeding_events = 0
-    
+
     # Simple thresholding
     for p in telemetry_points:
         accel = p["acceleration_ms2"]
         speed = p["speed_kmh"]
-        
+
         if accel < -0.8:
             harsh_braking_count += 1
         elif accel > 0.7:
             harsh_acceleration_count += 1
-            
+
         if speed > 95:
             speeding_events += 1
-            
+
     return {
         "harsh_braking_count": harsh_braking_count,
         "harsh_acceleration_count": harsh_acceleration_count,
-        "speeding_events": speeding_events
+        "speeding_events": speeding_events,
     }
+
 
 if __name__ == "__main__":
     # Test with a dummy trip
     test_points = [
         {"acceleration_ms2": 0.1, "speed_kmh": 20},
         {"acceleration_ms2": 0.2, "speed_kmh": 25},
-        {"acceleration_ms2": 0.8, "speed_kmh": 35}, # Harsh accel
-        {"acceleration_ms2": -0.9, "speed_kmh": 25}, # Harsh brake
-        {"acceleration_ms2": 0.0, "speed_kmh": 96}  # Speeding
+        {"acceleration_ms2": 0.8, "speed_kmh": 35},  # Harsh accel
+        {"acceleration_ms2": -0.9, "speed_kmh": 25},  # Harsh brake
+        {"acceleration_ms2": 0.0, "speed_kmh": 96},  # Speeding
     ]
-    
+
     features = extract_smoothness_features(test_points)
     events = detect_safety_events(test_points)
-    
+
     print("Smoothness Features:", features)
     print("Safety Events:", events)

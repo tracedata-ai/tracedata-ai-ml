@@ -26,7 +26,11 @@ from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 
 from src.core.features import extract_smoothness_features
-from src.core.model_contract import CONTRACT_VERSION, SMOOTHNESS_FEATURE_COLUMNS, smoothness_label_from_features
+from src.core.model_contract import (
+    CONTRACT_VERSION,
+    SMOOTHNESS_FEATURE_COLUMNS,
+    smoothness_label_from_features,
+)
 from src.mlops.mlflow_common import log_serving_artifacts, log_xgboost_model, maybe_register_model
 from src.mlops.mlflow_settings import ensure_mlflow_experiment, resolve_tracking_uri
 from src.utils.simulator import generate_telemetry
