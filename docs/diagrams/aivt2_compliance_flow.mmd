@@ -1,0 +1,11 @@
+flowchart TD
+    A[MLflow run selection] --> B[Load model and serving contract]
+    B --> C[Generate synthetic eval windows]
+    C --> D[Fairness test]
+    C --> E[Explainability test]
+    C --> F[Robustness test]
+    D --> G[Compose compliance summary]
+    E --> G
+    F --> G
+    G --> H[Artifact upload and CI gate]
+

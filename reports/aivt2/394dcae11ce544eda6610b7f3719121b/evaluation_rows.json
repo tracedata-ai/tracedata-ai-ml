@@ -1,0 +1,5002 @@
+[
+  {
+    "style": "jerky",
+    "age": 50,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.1972,
+      "driving_consistency": 0.258,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2867,
+      "driving_consistency": 0.8548,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 44,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0402,
+      "driving_consistency": 0.0996,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 53,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.2,
+      "driving_consistency": 0.2391,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 58,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.0403,
+      "driving_consistency": 0.0591,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.0374,
+      "driving_consistency": 0.1399,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 39,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.3176,
+      "driving_consistency": 0.4215,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.2138,
+      "driving_consistency": 0.42,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 60,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.2211,
+      "driving_consistency": 0.3364,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 33,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.4358,
+      "driving_consistency": 0.5286,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 52,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.1642,
+      "driving_consistency": 0.2867,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 41,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.3648,
+      "driving_consistency": 0.6433,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 55,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.2109,
+      "driving_consistency": 0.2925,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 43,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.2241,
+      "driving_consistency": 0.2981,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.0412,
+      "driving_consistency": 0.1179,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 37,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.1726,
+      "driving_consistency": 0.2923,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 61,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.0492,
+      "driving_consistency": 0.0826,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 56,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.1068,
+      "driving_consistency": 0.3554,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.0458,
+      "driving_consistency": 0.0728,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 46,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.035,
+      "driving_consistency": 0.0619,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 28,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.2235,
+      "driving_consistency": 0.2516,
+      "comfort_zone_percent": 80.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 25,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.2036,
+      "driving_consistency": 0.3584,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 40,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.3447,
+      "driving_consistency": 0.5583,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 61,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.0515,
+      "driving_consistency": 0.121,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 49,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.1787,
+      "driving_consistency": 0.2766,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 57,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0422,
+      "driving_consistency": 0.0949,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 56,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.2128,
+      "driving_consistency": 0.3678,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 33,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.1354,
+      "driving_consistency": 0.4156,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 43,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.2583,
+      "driving_consistency": 0.3868,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 32,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.0438,
+      "driving_consistency": 0.1123,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 50,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.2441,
+      "driving_consistency": 0.5707,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2076,
+      "driving_consistency": 0.3577,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 46,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.2203,
+      "driving_consistency": 0.3178,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 56,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.2482,
+      "driving_consistency": 0.4842,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.0408,
+      "driving_consistency": 0.0605,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 33,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.0439,
+      "driving_consistency": 0.0843,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 22,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.3181,
+      "driving_consistency": 0.5613,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 59,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0341,
+      "driving_consistency": 0.0946,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 40,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.0294,
+      "driving_consistency": 0.0344,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 43,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.2498,
+      "driving_consistency": 0.4184,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 39,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.1146,
+      "driving_consistency": 0.2444,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 35,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.2029,
+      "driving_consistency": 0.3455,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 25,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.0356,
+      "driving_consistency": 0.0487,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 52,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.209,
+      "driving_consistency": 0.2862,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 61,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0415,
+      "driving_consistency": 0.0617,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 43,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.0283,
+      "driving_consistency": 0.0807,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 28,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.1753,
+      "driving_consistency": 0.4791,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.0451,
+      "driving_consistency": 0.1383,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 64,
+    "years_experience": 44,
+    "features": {
+      "accel_fluidity": 0.0344,
+      "driving_consistency": 0.1051,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.0393,
+      "driving_consistency": 0.0726,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 43,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.2541,
+      "driving_consistency": 0.8898,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 55,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.0379,
+      "driving_consistency": 0.0842,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 32,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.1942,
+      "driving_consistency": 0.3073,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 54,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.1923,
+      "driving_consistency": 0.5378,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 41,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.04,
+      "driving_consistency": 0.0499,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 52,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.1777,
+      "driving_consistency": 0.2493,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 57,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.0344,
+      "driving_consistency": 0.1648,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 41,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.0381,
+      "driving_consistency": 0.0696,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 43,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.1586,
+      "driving_consistency": 0.4743,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 34,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.2216,
+      "driving_consistency": 0.4806,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 25,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2241,
+      "driving_consistency": 0.3247,
+      "comfort_zone_percent": 80.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 55,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.0352,
+      "driving_consistency": 0.0665,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.0315,
+      "driving_consistency": 0.0366,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 50,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.0337,
+      "driving_consistency": 0.1311,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 28,
+    "years_experience": 4,
+    "features": {
+      "accel_fluidity": 0.0353,
+      "driving_consistency": 0.0864,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.0376,
+      "driving_consistency": 0.0483,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.1807,
+      "driving_consistency": 0.2793,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 34,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.2643,
+      "driving_consistency": 0.5955,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 39,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.3331,
+      "driving_consistency": 0.5834,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 23,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.1768,
+      "driving_consistency": 0.2697,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 51,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.2625,
+      "driving_consistency": 0.439,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 28,
+    "years_experience": 4,
+    "features": {
+      "accel_fluidity": 0.3693,
+      "driving_consistency": 0.5854,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 57,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.2028,
+      "driving_consistency": 0.6084,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 45,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.0261,
+      "driving_consistency": 0.0367,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 33,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.2119,
+      "driving_consistency": 0.2923,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.279,
+      "driving_consistency": 0.5161,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.0331,
+      "driving_consistency": 0.0995,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 50,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.0432,
+      "driving_consistency": 0.0508,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.0401,
+      "driving_consistency": 0.1228,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 63,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.2308,
+      "driving_consistency": 0.3795,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 48,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.0367,
+      "driving_consistency": 0.0954,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.0342,
+      "driving_consistency": 0.044,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 45,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.1962,
+      "driving_consistency": 0.616,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 41,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.2321,
+      "driving_consistency": 0.3642,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 30,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0374,
+      "driving_consistency": 0.0562,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 48,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.0404,
+      "driving_consistency": 0.0837,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 65,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.058,
+      "driving_consistency": 0.1022,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 44,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.0358,
+      "driving_consistency": 0.0565,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.2631,
+      "driving_consistency": 0.4538,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 25,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.3224,
+      "driving_consistency": 0.4904,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 31,
+    "years_experience": 4,
+    "features": {
+      "accel_fluidity": 0.2498,
+      "driving_consistency": 0.8528,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 42,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.1921,
+      "driving_consistency": 0.2857,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 36,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.1829,
+      "driving_consistency": 0.2652,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 60,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.0448,
+      "driving_consistency": 0.0956,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 38,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.1783,
+      "driving_consistency": 0.4088,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 63,
+    "years_experience": 42,
+    "features": {
+      "accel_fluidity": 0.2575,
+      "driving_consistency": 0.4489,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0455,
+      "driving_consistency": 0.1121,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.0412,
+      "driving_consistency": 0.064,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 53,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.2901,
+      "driving_consistency": 0.3947,
+      "comfort_zone_percent": 80.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 33,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.0414,
+      "driving_consistency": 0.0852,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 35,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.1554,
+      "driving_consistency": 0.1934,
+      "comfort_zone_percent": 10.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 40,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.2228,
+      "driving_consistency": 0.5255,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 28,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.0452,
+      "driving_consistency": 0.0991,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0442,
+      "driving_consistency": 0.0872,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.0435,
+      "driving_consistency": 0.059,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 55,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.1386,
+      "driving_consistency": 0.4073,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 59,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.0378,
+      "driving_consistency": 0.0895,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.1826,
+      "driving_consistency": 0.5121,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 40,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.0301,
+      "driving_consistency": 0.0441,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 24,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.2612,
+      "driving_consistency": 0.8474,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 26,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0381,
+      "driving_consistency": 0.0703,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 35,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.2846,
+      "driving_consistency": 0.3489,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 64,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0301,
+      "driving_consistency": 0.0717,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 47,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.0452,
+      "driving_consistency": 0.1242,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 58,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.1936,
+      "driving_consistency": 0.4327,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.0437,
+      "driving_consistency": 0.0889,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 28,
+    "years_experience": 4,
+    "features": {
+      "accel_fluidity": 0.4181,
+      "driving_consistency": 0.6333,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 54,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.2822,
+      "driving_consistency": 0.4893,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 49,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.1608,
+      "driving_consistency": 0.2999,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 50,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.0298,
+      "driving_consistency": 0.0655,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 32,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.257,
+      "driving_consistency": 1.0321,
+      "comfort_zone_percent": 10.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.0318,
+      "driving_consistency": 0.0726,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 62,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.1986,
+      "driving_consistency": 0.2585,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 34,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.1868,
+      "driving_consistency": 0.6204,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.0354,
+      "driving_consistency": 0.0584,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.1526,
+      "driving_consistency": 0.277,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 44,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.2833,
+      "driving_consistency": 0.338,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 65,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.0457,
+      "driving_consistency": 0.1381,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 64,
+    "years_experience": 44,
+    "features": {
+      "accel_fluidity": 0.2831,
+      "driving_consistency": 0.4375,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 42,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.0412,
+      "driving_consistency": 0.1222,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0346,
+      "driving_consistency": 0.0726,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.043,
+      "driving_consistency": 0.1003,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 47,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.1773,
+      "driving_consistency": 0.2762,
+      "comfort_zone_percent": 10.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 46,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.0265,
+      "driving_consistency": 0.0423,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 45,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.0405,
+      "driving_consistency": 0.094,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.0401,
+      "driving_consistency": 0.1158,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 40,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.0368,
+      "driving_consistency": 0.11,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 57,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.1338,
+      "driving_consistency": 0.2497,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 65,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.0426,
+      "driving_consistency": 0.082,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 56,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.3671,
+      "driving_consistency": 0.8131,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 43,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.0431,
+      "driving_consistency": 0.0771,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.0397,
+      "driving_consistency": 0.1403,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 63,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.2937,
+      "driving_consistency": 0.3817,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0266,
+      "driving_consistency": 0.1498,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 61,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.27,
+      "driving_consistency": 0.3972,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 25,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.416,
+      "driving_consistency": 0.4501,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 52,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.4075,
+      "driving_consistency": 0.6766,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 57,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.2095,
+      "driving_consistency": 0.3897,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 35,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.2509,
+      "driving_consistency": 0.502,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 49,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.2178,
+      "driving_consistency": 0.4895,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 54,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.2092,
+      "driving_consistency": 0.3835,
+      "comfort_zone_percent": 80.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 35,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.1821,
+      "driving_consistency": 0.3199,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 58,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.4082,
+      "driving_consistency": 0.6921,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.0397,
+      "driving_consistency": 0.1033,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 23,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.0357,
+      "driving_consistency": 0.111,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 28,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.2013,
+      "driving_consistency": 0.3177,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.0401,
+      "driving_consistency": 0.0766,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.0267,
+      "driving_consistency": 0.0631,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 4,
+    "features": {
+      "accel_fluidity": 0.0404,
+      "driving_consistency": 0.0591,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 56,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.0452,
+      "driving_consistency": 0.1151,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 59,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.2335,
+      "driving_consistency": 0.507,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 41,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0429,
+      "driving_consistency": 0.0576,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 43,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.3147,
+      "driving_consistency": 0.5008,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 45,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.2599,
+      "driving_consistency": 0.6979,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 24,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.2815,
+      "driving_consistency": 0.3836,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 22,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.2103,
+      "driving_consistency": 0.3825,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 43,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.2166,
+      "driving_consistency": 0.2993,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 63,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.0556,
+      "driving_consistency": 0.0839,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 48,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.0425,
+      "driving_consistency": 0.076,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 44,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0401,
+      "driving_consistency": 0.1145,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 64,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0381,
+      "driving_consistency": 0.0409,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 39,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.2822,
+      "driving_consistency": 0.4125,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 65,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.2191,
+      "driving_consistency": 0.4373,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 25,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.2274,
+      "driving_consistency": 0.5436,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 23,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.3277,
+      "driving_consistency": 0.4085,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 28,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.2105,
+      "driving_consistency": 0.5358,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2238,
+      "driving_consistency": 0.2093,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 51,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.1715,
+      "driving_consistency": 0.2711,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 62,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.1957,
+      "driving_consistency": 0.6727,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 31,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.1671,
+      "driving_consistency": 0.59,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 59,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.3705,
+      "driving_consistency": 0.4367,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 53,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.0371,
+      "driving_consistency": 0.0846,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 53,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.199,
+      "driving_consistency": 0.3826,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 30,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.2134,
+      "driving_consistency": 0.4772,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.0444,
+      "driving_consistency": 0.0579,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 49,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.1892,
+      "driving_consistency": 0.5092,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 44,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.0472,
+      "driving_consistency": 0.0748,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 64,
+    "years_experience": 43,
+    "features": {
+      "accel_fluidity": 0.0444,
+      "driving_consistency": 0.0905,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 45,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.3866,
+      "driving_consistency": 0.4309,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 26,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.0401,
+      "driving_consistency": 0.0417,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 63,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.1411,
+      "driving_consistency": 0.2533,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 48,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.1984,
+      "driving_consistency": 0.3588,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 50,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.0439,
+      "driving_consistency": 0.0826,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 59,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.2259,
+      "driving_consistency": 0.508,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 33,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.0358,
+      "driving_consistency": 0.0719,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 26,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.2326,
+      "driving_consistency": 0.3679,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 22,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.1881,
+      "driving_consistency": 0.2693,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 25,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.0461,
+      "driving_consistency": 0.1401,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 40,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.2775,
+      "driving_consistency": 0.3528,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 35,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.2012,
+      "driving_consistency": 0.3337,
+      "comfort_zone_percent": 85.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 44,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0378,
+      "driving_consistency": 0.063,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 45,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.2525,
+      "driving_consistency": 0.4059,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 22,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.4083,
+      "driving_consistency": 0.4975,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 56,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.0458,
+      "driving_consistency": 0.1108,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 50,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.0334,
+      "driving_consistency": 0.0974,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 27,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.1715,
+      "driving_consistency": 0.2409,
+      "comfort_zone_percent": 10.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.042,
+      "driving_consistency": 0.0389,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 32,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.0413,
+      "driving_consistency": 0.0395,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 59,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.0313,
+      "driving_consistency": 0.0304,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0454,
+      "driving_consistency": 0.0487,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 61,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.2174,
+      "driving_consistency": 0.5591,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 28,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.0271,
+      "driving_consistency": 0.0723,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 65,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.1962,
+      "driving_consistency": 0.2482,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 33,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.0368,
+      "driving_consistency": 0.0448,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.0444,
+      "driving_consistency": 0.122,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 26,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2671,
+      "driving_consistency": 0.3151,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 57,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.2217,
+      "driving_consistency": 0.5127,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 41,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.0473,
+      "driving_consistency": 0.0624,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 52,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.0429,
+      "driving_consistency": 0.0839,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 45,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.299,
+      "driving_consistency": 0.391,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 41,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.2181,
+      "driving_consistency": 0.3342,
+      "comfort_zone_percent": 5.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 23,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.2067,
+      "driving_consistency": 0.3658,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 25,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0348,
+      "driving_consistency": 0.048,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 54,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.3273,
+      "driving_consistency": 0.7939,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0421,
+      "driving_consistency": 0.0643,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 30,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0389,
+      "driving_consistency": 0.0479,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 39,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.2475,
+      "driving_consistency": 0.5172,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 55,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.0482,
+      "driving_consistency": 0.064,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 47,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.3265,
+      "driving_consistency": 0.5237,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 32,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.1879,
+      "driving_consistency": 0.3465,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.2323,
+      "driving_consistency": 0.4152,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 45,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.3462,
+      "driving_consistency": 0.3769,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 45,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.1778,
+      "driving_consistency": 0.4219,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 40,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.1628,
+      "driving_consistency": 0.3992,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 41,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0348,
+      "driving_consistency": 0.0733,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.0334,
+      "driving_consistency": 0.0372,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 64,
+    "years_experience": 43,
+    "features": {
+      "accel_fluidity": 0.0413,
+      "driving_consistency": 0.0916,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 25,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0365,
+      "driving_consistency": 0.0533,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 56,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.2312,
+      "driving_consistency": 0.6522,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.1731,
+      "driving_consistency": 0.3132,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 58,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0312,
+      "driving_consistency": 0.1051,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 48,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.2479,
+      "driving_consistency": 0.5388,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.0391,
+      "driving_consistency": 0.1034,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 27,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.2848,
+      "driving_consistency": 0.396,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 36,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.2741,
+      "driving_consistency": 0.6045,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 45,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.2126,
+      "driving_consistency": 0.6387,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 48,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.2199,
+      "driving_consistency": 0.3617,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 36,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.2217,
+      "driving_consistency": 0.3336,
+      "comfort_zone_percent": 80.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 44,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.236,
+      "driving_consistency": 0.2769,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 64,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.0484,
+      "driving_consistency": 0.1158,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 46,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.2336,
+      "driving_consistency": 0.3978,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 59,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.3366,
+      "driving_consistency": 0.5133,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 33,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.1855,
+      "driving_consistency": 0.3763,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 44,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.0416,
+      "driving_consistency": 0.1285,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 22,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.1252,
+      "driving_consistency": 0.2984,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 60,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.0408,
+      "driving_consistency": 0.0648,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 24,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.0306,
+      "driving_consistency": 0.0346,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 42,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.0345,
+      "driving_consistency": 0.0624,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 23,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0427,
+      "driving_consistency": 0.0997,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 40,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.0417,
+      "driving_consistency": 0.0544,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 39,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.2305,
+      "driving_consistency": 0.4795,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.0443,
+      "driving_consistency": 0.0746,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 43,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.0345,
+      "driving_consistency": 0.0497,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.3426,
+      "driving_consistency": 0.6393,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 40,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.1576,
+      "driving_consistency": 0.3069,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 27,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.1955,
+      "driving_consistency": 0.2468,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0339,
+      "driving_consistency": 0.0884,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.0432,
+      "driving_consistency": 0.0479,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 42,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.1649,
+      "driving_consistency": 0.2368,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 39,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.0209,
+      "driving_consistency": 0.0868,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 64,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.4123,
+      "driving_consistency": 0.6343,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 57,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.431,
+      "driving_consistency": 0.7941,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 43,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.0332,
+      "driving_consistency": 0.0551,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 35,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.0441,
+      "driving_consistency": 0.113,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 22,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2018,
+      "driving_consistency": 0.3634,
+      "comfort_zone_percent": 85.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 62,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.1966,
+      "driving_consistency": 0.3588,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 4,
+    "features": {
+      "accel_fluidity": 0.0295,
+      "driving_consistency": 0.0574,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 49,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.0421,
+      "driving_consistency": 0.084,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.0408,
+      "driving_consistency": 0.0626,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 53,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.1803,
+      "driving_consistency": 0.3036,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 33,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.0318,
+      "driving_consistency": 0.0659,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 59,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.2232,
+      "driving_consistency": 0.4993,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 39,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.1066,
+      "driving_consistency": 0.318,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 48,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.1483,
+      "driving_consistency": 0.2999,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.0431,
+      "driving_consistency": 0.0696,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.0457,
+      "driving_consistency": 0.1597,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 44,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.1872,
+      "driving_consistency": 0.4279,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 37,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.3253,
+      "driving_consistency": 0.3981,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 34,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.4437,
+      "driving_consistency": 0.4595,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 38,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.3286,
+      "driving_consistency": 0.6048,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 59,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.2014,
+      "driving_consistency": 0.5913,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0421,
+      "driving_consistency": 0.0838,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 49,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.4173,
+      "driving_consistency": 0.8232,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0405,
+      "driving_consistency": 0.0557,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 32,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.0444,
+      "driving_consistency": 0.1036,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 52,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.3084,
+      "driving_consistency": 0.5832,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 27,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0436,
+      "driving_consistency": 0.0854,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 39,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0438,
+      "driving_consistency": 0.07,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 44,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.2804,
+      "driving_consistency": 0.3772,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 57,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.1573,
+      "driving_consistency": 0.2638,
+      "comfort_zone_percent": 5.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 65,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.1689,
+      "driving_consistency": 0.6256,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 44,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.3067,
+      "driving_consistency": 0.3431,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 49,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.2904,
+      "driving_consistency": 0.7745,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 24,
+    "years_experience": 4,
+    "features": {
+      "accel_fluidity": 0.3361,
+      "driving_consistency": 0.5946,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 57,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.1946,
+      "driving_consistency": 0.425,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.185,
+      "driving_consistency": 0.4055,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 25,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.3892,
+      "driving_consistency": 0.6126,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 57,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.0377,
+      "driving_consistency": 0.0614,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 49,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.1722,
+      "driving_consistency": 0.2315,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.0522,
+      "driving_consistency": 0.0946,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.2571,
+      "driving_consistency": 0.3473,
+      "comfort_zone_percent": 85.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 59,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.3817,
+      "driving_consistency": 0.8004,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 31,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.3021,
+      "driving_consistency": 0.3662,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 50,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.1857,
+      "driving_consistency": 0.6129,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 45,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.1896,
+      "driving_consistency": 0.6714,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 41,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.4176,
+      "driving_consistency": 0.7176,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 23,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.0323,
+      "driving_consistency": 0.084,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 37,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0304,
+      "driving_consistency": 0.0677,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 55,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.1913,
+      "driving_consistency": 0.2191,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2025,
+      "driving_consistency": 0.3841,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 38,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.197,
+      "driving_consistency": 0.3362,
+      "comfort_zone_percent": 80.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 61,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.028,
+      "driving_consistency": 0.0509,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 31,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.1745,
+      "driving_consistency": 0.1949,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 63,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.0522,
+      "driving_consistency": 0.101,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 44,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.2219,
+      "driving_consistency": 0.3088,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 52,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.03,
+      "driving_consistency": 0.0539,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 32,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.1749,
+      "driving_consistency": 0.3945,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 44,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.5153,
+      "driving_consistency": 0.5148,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 61,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.1986,
+      "driving_consistency": 0.4114,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.1575,
+      "driving_consistency": 0.2969,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 45,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.0337,
+      "driving_consistency": 0.1032,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.0481,
+      "driving_consistency": 0.0766,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 41,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.054,
+      "driving_consistency": 0.1112,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 45,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.2839,
+      "driving_consistency": 0.5957,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 55,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.0397,
+      "driving_consistency": 0.0812,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 26,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.0319,
+      "driving_consistency": 0.0274,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 59,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.2267,
+      "driving_consistency": 0.3964,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 23,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2404,
+      "driving_consistency": 0.437,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 30,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.2492,
+      "driving_consistency": 0.2935,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 25,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0361,
+      "driving_consistency": 0.0684,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.0375,
+      "driving_consistency": 0.0557,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.0375,
+      "driving_consistency": 0.078,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 60,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.2744,
+      "driving_consistency": 0.3357,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 60,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.2189,
+      "driving_consistency": 0.5816,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 43,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.1646,
+      "driving_consistency": 0.6159,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.0438,
+      "driving_consistency": 0.06,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 46,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.0368,
+      "driving_consistency": 0.1052,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 34,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.3009,
+      "driving_consistency": 0.4567,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 30,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.2198,
+      "driving_consistency": 0.4312,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 22,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2085,
+      "driving_consistency": 0.5138,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 12,
+    "features": {
+      "accel_fluidity": 0.0406,
+      "driving_consistency": 0.0499,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.0506,
+      "driving_consistency": 0.0879,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 23,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0489,
+      "driving_consistency": 0.1118,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 47,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.2465,
+      "driving_consistency": 0.4528,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 59,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.2781,
+      "driving_consistency": 0.454,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 47,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.3163,
+      "driving_consistency": 0.6228,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 51,
+    "years_experience": 24,
+    "features": {
+      "accel_fluidity": 0.2744,
+      "driving_consistency": 0.635,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 42,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.1517,
+      "driving_consistency": 0.2506,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 35,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.2244,
+      "driving_consistency": 0.3605,
+      "comfort_zone_percent": 85.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 35,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.1647,
+      "driving_consistency": 0.2813,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 63,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.2312,
+      "driving_consistency": 0.5181,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 63,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.0332,
+      "driving_consistency": 0.0509,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.0358,
+      "driving_consistency": 0.0783,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 46,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.0349,
+      "driving_consistency": 0.0883,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 32,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.1778,
+      "driving_consistency": 0.4307,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 23,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0403,
+      "driving_consistency": 0.0993,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 49,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.05,
+      "driving_consistency": 0.0717,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 61,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.0359,
+      "driving_consistency": 0.0476,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 64,
+    "years_experience": 42,
+    "features": {
+      "accel_fluidity": 0.0339,
+      "driving_consistency": 0.0653,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.0291,
+      "driving_consistency": 0.0286,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.053,
+      "driving_consistency": 0.0838,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 28,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.2607,
+      "driving_consistency": 0.6152,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 33,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.2749,
+      "driving_consistency": 0.2834,
+      "comfort_zone_percent": 90.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 39,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.0378,
+      "driving_consistency": 0.0749,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 42,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.2241,
+      "driving_consistency": 0.6632,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.0415,
+      "driving_consistency": 0.0755,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.0544,
+      "driving_consistency": 0.0847,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 36,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.1951,
+      "driving_consistency": 0.4949,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 32,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.0348,
+      "driving_consistency": 0.0416,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 43,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.0465,
+      "driving_consistency": 0.0512,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 29,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.2233,
+      "driving_consistency": 0.4593,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 35,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.0367,
+      "driving_consistency": 0.0496,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 25,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.336,
+      "driving_consistency": 0.3478,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 57,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0332,
+      "driving_consistency": 0.0342,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 52,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.0248,
+      "driving_consistency": 0.057,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0402,
+      "driving_consistency": 0.1044,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 51,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.2678,
+      "driving_consistency": 0.5845,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 33,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.0467,
+      "driving_consistency": 0.0998,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.234,
+      "driving_consistency": 0.4542,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 65,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.1808,
+      "driving_consistency": 0.3469,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 32,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.0417,
+      "driving_consistency": 0.0436,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.2022,
+      "driving_consistency": 0.3443,
+      "comfort_zone_percent": 85.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 24,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.3501,
+      "driving_consistency": 0.4277,
+      "comfort_zone_percent": 5.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 27,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.2719,
+      "driving_consistency": 0.7614,
+      "comfort_zone_percent": 20.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 26,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.2117,
+      "driving_consistency": 0.3671,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 44,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.0458,
+      "driving_consistency": 0.0596,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 58,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.0425,
+      "driving_consistency": 0.0497,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.0502,
+      "driving_consistency": 0.0562,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 52,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.043,
+      "driving_consistency": 0.0527,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 59,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.206,
+      "driving_consistency": 0.5159,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 58,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.1937,
+      "driving_consistency": 0.3663,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 27,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.4234,
+      "driving_consistency": 0.7819,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 55,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.0386,
+      "driving_consistency": 0.0509,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 23,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.2197,
+      "driving_consistency": 0.4916,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 26,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.1915,
+      "driving_consistency": 0.4258,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 42,
+    "features": {
+      "accel_fluidity": 0.038,
+      "driving_consistency": 0.1306,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 47,
+    "years_experience": 23,
+    "features": {
+      "accel_fluidity": 0.4604,
+      "driving_consistency": 0.429,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 46,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.0416,
+      "driving_consistency": 0.0941,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 39,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.2546,
+      "driving_consistency": 0.488,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 29,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.2686,
+      "driving_consistency": 0.5277,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 41,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.0393,
+      "driving_consistency": 0.0803,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.0302,
+      "driving_consistency": 0.0644,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 29,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.3122,
+      "driving_consistency": 0.2919,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 28,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.2716,
+      "driving_consistency": 0.4135,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 58,
+    "years_experience": 36,
+    "features": {
+      "accel_fluidity": 0.3107,
+      "driving_consistency": 0.6536,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 29,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.3432,
+      "driving_consistency": 0.4637,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 54,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.0482,
+      "driving_consistency": 0.0983,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 55,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.2079,
+      "driving_consistency": 0.197,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 53,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.2828,
+      "driving_consistency": 0.3181,
+      "comfort_zone_percent": 90.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.0308,
+      "driving_consistency": 0.0844,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 22,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0313,
+      "driving_consistency": 0.0573,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 40,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.2529,
+      "driving_consistency": 0.3742,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 55,
+    "years_experience": 28,
+    "features": {
+      "accel_fluidity": 0.0409,
+      "driving_consistency": 0.0819,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 28,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0442,
+      "driving_consistency": 0.0518,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 37,
+    "years_experience": 10,
+    "features": {
+      "accel_fluidity": 0.0472,
+      "driving_consistency": 0.0956,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 51,
+    "years_experience": 30,
+    "features": {
+      "accel_fluidity": 0.0402,
+      "driving_consistency": 0.0565,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 65,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.2782,
+      "driving_consistency": 0.6106,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.0449,
+      "driving_consistency": 0.1174,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 49,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.2418,
+      "driving_consistency": 0.3407,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 39,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.0345,
+      "driving_consistency": 0.0936,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 50,
+    "years_experience": 25,
+    "features": {
+      "accel_fluidity": 0.1226,
+      "driving_consistency": 0.2208,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 63,
+    "years_experience": 39,
+    "features": {
+      "accel_fluidity": 0.1849,
+      "driving_consistency": 0.5823,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 56,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.0392,
+      "driving_consistency": 0.0713,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 59,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.3539,
+      "driving_consistency": 0.4635,
+      "comfort_zone_percent": 80.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0442,
+      "driving_consistency": 0.1222,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.2619,
+      "driving_consistency": 0.5752,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 65,
+    "years_experience": 42,
+    "features": {
+      "accel_fluidity": 0.1989,
+      "driving_consistency": 0.3221,
+      "comfort_zone_percent": 10.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 62,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.2429,
+      "driving_consistency": 0.4504,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 49,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.0349,
+      "driving_consistency": 0.0939,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 46,
+    "years_experience": 22,
+    "features": {
+      "accel_fluidity": 0.1773,
+      "driving_consistency": 0.367,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.045,
+      "driving_consistency": 0.0679,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 43,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.1591,
+      "driving_consistency": 0.5287,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 36,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.0518,
+      "driving_consistency": 0.1153,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 55,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.0399,
+      "driving_consistency": 0.0513,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.0354,
+      "driving_consistency": 0.0827,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 22,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0313,
+      "driving_consistency": 0.0528,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.0306,
+      "driving_consistency": 0.0343,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 47,
+    "years_experience": 20,
+    "features": {
+      "accel_fluidity": 0.099,
+      "driving_consistency": 0.4196,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 42,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.037,
+      "driving_consistency": 0.0529,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 42,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.0409,
+      "driving_consistency": 0.077,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.2037,
+      "driving_consistency": 0.2902,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 21,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0477,
+      "driving_consistency": 0.1117,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 32,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.4968,
+      "driving_consistency": 0.4477,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 60,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.2292,
+      "driving_consistency": 0.2342,
+      "comfort_zone_percent": 95.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 27,
+    "years_experience": 5,
+    "features": {
+      "accel_fluidity": 0.0402,
+      "driving_consistency": 0.0813,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 34,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.1858,
+      "driving_consistency": 0.4003,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 25,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.4414,
+      "driving_consistency": 0.3829,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 36,
+    "years_experience": 9,
+    "features": {
+      "accel_fluidity": 0.4363,
+      "driving_consistency": 0.4829,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 39,
+    "years_experience": 18,
+    "features": {
+      "accel_fluidity": 0.0449,
+      "driving_consistency": 0.1267,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 31,
+    "years_experience": 7,
+    "features": {
+      "accel_fluidity": 0.0432,
+      "driving_consistency": 0.0599,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 57,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.0408,
+      "driving_consistency": 0.1095,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 39,
+    "years_experience": 15,
+    "features": {
+      "accel_fluidity": 0.2238,
+      "driving_consistency": 0.3091,
+      "comfort_zone_percent": 85.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 24,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.0266,
+      "driving_consistency": 0.057,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 25,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0416,
+      "driving_consistency": 0.0795,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 44,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.2838,
+      "driving_consistency": 0.4156,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 59,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.0414,
+      "driving_consistency": 0.0756,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 25,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0427,
+      "driving_consistency": 0.0512,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 22,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.1179,
+      "driving_consistency": 0.1823,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 39,
+    "years_experience": 19,
+    "features": {
+      "accel_fluidity": 0.3176,
+      "driving_consistency": 0.6066,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 53,
+    "years_experience": 33,
+    "features": {
+      "accel_fluidity": 0.3644,
+      "driving_consistency": 0.7892,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 29,
+    "years_experience": 3,
+    "features": {
+      "accel_fluidity": 0.0423,
+      "driving_consistency": 0.108,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 50,
+    "years_experience": 27,
+    "features": {
+      "accel_fluidity": 0.0389,
+      "driving_consistency": 0.1022,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 29,
+    "years_experience": 8,
+    "features": {
+      "accel_fluidity": 0.1823,
+      "driving_consistency": 0.3826,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 27,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.2257,
+      "driving_consistency": 0.272,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 54,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.2422,
+      "driving_consistency": 0.5659,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 53,
+    "years_experience": 32,
+    "features": {
+      "accel_fluidity": 0.1793,
+      "driving_consistency": 0.5372,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 34,
+    "years_experience": 13,
+    "features": {
+      "accel_fluidity": 0.0342,
+      "driving_consistency": 0.087,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 24,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.4293,
+      "driving_consistency": 0.649,
+      "comfort_zone_percent": 45.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 35,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.1646,
+      "driving_consistency": 0.287,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 41,
+    "years_experience": 17,
+    "features": {
+      "accel_fluidity": 0.1488,
+      "driving_consistency": 0.2887,
+      "comfort_zone_percent": 55.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 58,
+    "years_experience": 35,
+    "features": {
+      "accel_fluidity": 0.1904,
+      "driving_consistency": 0.1964,
+      "comfort_zone_percent": 25.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 37,
+    "years_experience": 16,
+    "features": {
+      "accel_fluidity": 0.0529,
+      "driving_consistency": 0.0532,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 25,
+    "years_experience": 2,
+    "features": {
+      "accel_fluidity": 0.3193,
+      "driving_consistency": 0.3564,
+      "comfort_zone_percent": 30.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 27,
+    "years_experience": 6,
+    "features": {
+      "accel_fluidity": 0.3161,
+      "driving_consistency": 0.7446,
+      "comfort_zone_percent": 40.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 43,
+    "features": {
+      "accel_fluidity": 0.1904,
+      "driving_consistency": 0.2155,
+      "comfort_zone_percent": 15.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 60,
+    "years_experience": 40,
+    "features": {
+      "accel_fluidity": 0.047,
+      "driving_consistency": 0.1344,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 28,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.0296,
+      "driving_consistency": 0.0489,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 62,
+    "years_experience": 38,
+    "features": {
+      "accel_fluidity": 0.0442,
+      "driving_consistency": 0.1024,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 64,
+    "years_experience": 41,
+    "features": {
+      "accel_fluidity": 0.241,
+      "driving_consistency": 0.2945,
+      "comfort_zone_percent": 75.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 50,
+    "years_experience": 29,
+    "features": {
+      "accel_fluidity": 0.2697,
+      "driving_consistency": 0.3248,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 27,
+    "years_experience": 1,
+    "features": {
+      "accel_fluidity": 0.3424,
+      "driving_consistency": 0.7179,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 37,
+    "years_experience": 14,
+    "features": {
+      "accel_fluidity": 0.2278,
+      "driving_consistency": 0.2767,
+      "comfort_zone_percent": 65.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 58,
+    "years_experience": 31,
+    "features": {
+      "accel_fluidity": 0.0393,
+      "driving_consistency": 0.0598,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 46,
+    "years_experience": 26,
+    "features": {
+      "accel_fluidity": 0.0472,
+      "driving_consistency": 0.1328,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "smooth",
+    "age": 23,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.0333,
+      "driving_consistency": 0.1543,
+      "comfort_zone_percent": 100.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 23,
+    "years_experience": 0,
+    "features": {
+      "accel_fluidity": 0.2098,
+      "driving_consistency": 0.4904,
+      "comfort_zone_percent": 70.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 58,
+    "years_experience": 37,
+    "features": {
+      "accel_fluidity": 0.2331,
+      "driving_consistency": 0.47,
+      "comfort_zone_percent": 60.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 44,
+    "years_experience": 21,
+    "features": {
+      "accel_fluidity": 0.393,
+      "driving_consistency": 0.6109,
+      "comfort_zone_percent": 50.0
+    }
+  },
+  {
+    "style": "jerky",
+    "age": 54,
+    "years_experience": 34,
+    "features": {
+      "accel_fluidity": 0.2423,
+      "driving_consistency": 0.3832,
+      "comfort_zone_percent": 35.0
+    }
+  },
+  {
+    "style": "unsafe",
+    "age": 33,
+    "years_experience": 11,
+    "features": {
+      "accel_fluidity": 0.3467,
+      "driving_consistency": 0.6286,
+      "comfort_zone_percent": 35.0
+    }
+  }
+]

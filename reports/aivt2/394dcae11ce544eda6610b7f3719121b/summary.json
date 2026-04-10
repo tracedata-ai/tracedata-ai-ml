@@ -1,0 +1,63 @@
+{
+  "status": "pass",
+  "framework": "AIVT2-aligned",
+  "generated_at_utc": "2026-04-10T08:05:14.780007+00:00",
+  "run_context": {
+    "run_id": "394dcae11ce544eda6610b7f3719121b",
+    "tracking_uri": "./mlruns",
+    "experiment_name": "smoothness-10min-production"
+  },
+  "sections": {
+    "fairness": {
+      "status": "pass",
+      "protected_attribute": "age>=35",
+      "favorable_threshold": 80.0,
+      "metrics": {
+        "disparate_impact": 1.1187074544079334,
+        "statistical_parity_difference": 0.05142815532213135,
+        "privileged_favorable_rate": 0.4332344213649852,
+        "unprivileged_favorable_rate": 0.48466257668711654,
+        "sample_count": 500
+      },
+      "thresholds": {
+        "min_disparate_impact": 0.8,
+        "max_abs_statistical_parity_difference": 0.2
+      }
+    },
+    "explainability": {
+      "status": "pass",
+      "metrics": {
+        "mean_abs_additivity_error": 1.722102612257004e-05,
+        "max_abs_additivity_error": 5.817413330078125e-05,
+        "sample_count": 500,
+        "global_mean_abs_attribution": {
+          "accel_fluidity": 4.241222261935473,
+          "driving_consistency": 3.759807300657034,
+          "comfort_zone_percent": 18.395043642520903
+        }
+      },
+      "thresholds": {
+        "max_mean_abs_additivity_error": 0.0001
+      },
+      "method": "xgboost_pred_contribs"
+    },
+    "robustness": {
+      "status": "pass",
+      "method": "feature_noise_perturbation",
+      "metrics": {
+        "mean_abs_score_delta": 4.300132083892822,
+        "max_abs_score_delta": 21.001556396484375,
+        "sample_count": 500
+      },
+      "thresholds": {
+        "max_mean_abs_score_delta": 8.0,
+        "noise_sigma": 0.05
+      }
+    },
+    "regression_snapshot": {
+      "mae": 1.2129519049231923,
+      "r2": 0.9944832122706749,
+      "sample_count": 500
+    }
+  }
+}

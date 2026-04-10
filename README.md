@@ -142,6 +142,12 @@ uv run python -m src.mlops.production_window_training
 uv run python -m src.mlops.training_pipeline
 ```
 
+**AIVT2-aligned compliance checks (fairness + explainability + robustness):**
+
+```bash
+uv run python -m src.compliance.aivt2_runner --tracking-uri ./mlruns --experiment-name smoothness-10min-production
+```
+
 ## Features (production model)
 
 Three values from `extract_smoothness_features` (see `src/core/features.py`):

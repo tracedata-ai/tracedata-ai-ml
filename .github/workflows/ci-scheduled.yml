@@ -1,10 +1,35 @@
-# Full test sweep on a schedule (same tests as CI; integration still skips without API).
-name: "CI: scheduled test sweep"
+# Nightly quality and AIVT2-aligned compliance sweep.
+name: "CI: nightly quality + compliance"
 
 on:
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 2 * * *"
   workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Optional MLflow run_id to evaluate (default: latest run in experiment)"
+        required: false
+        type: string
+      eval_samples:
+        description: "Compliance evaluation sample size"
+        required: false
+        default: "500"
+        type: string
+      perturbation_noise:
+        description: "Robustness perturbation sigma (feature noise)"
+        required: false
+        default: "0.05"
+        type: string
+      explainability_max_mean_additivity_error:
+        description: "Explainability tolerance for mean additivity error"
+        required: false
+        default: "1e-4"
+        type: string
+      skip_training:
+        description: "Skip training and only run compliance on selected/latest run"
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: ml-scheduled-${{ github.ref }}
@@ -46,3 +71,65 @@ jobs:
         run: |
           echo "## Scheduled pytest" >> "$GITHUB_STEP_SUMMARY"
           python3 .github/scripts/ci_junit_summary.py "Pytest:scheduled-junit.xml" >> "$GITHUB_STEP_SUMMARY" || true
+
+  compliance-aivt2:
+    name: AIVT2-aligned compliance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - run: uv python install ${{ env.PYTHON_VERSION }}
+
+      - run: uv sync --frozen --extra dev
+
+      - name: Train latest production candidate
+        if: ${{ !inputs.skip_training }}
+        run: uv run python -m src.mlops.production_window_training
+
+      - name: Run nightly AIVT2-aligned checks
+        run: |
+          RUN_ID_ARG=""
+          if [ -n "${{ inputs.run_id }}" ]; then
+            RUN_ID_ARG="--run-id ${{ inputs.run_id }}"
+          fi
+          uv run python -m src.compliance.aivt2_runner \
+            --tracking-uri ./mlruns \
+            --experiment-name smoothness-10min-production \
+            --output-dir reports/aivt2 \
+            --eval-samples "${{ inputs.eval_samples || '500' }}" \
+            --perturbation-noise "${{ inputs.perturbation_noise || '0.05' }}" \
+            --explainability-max-mean-additivity-error "${{ inputs.explainability_max_mean_additivity_error || '1e-4' }}" \
+            $RUN_ID_ARG
+
+      - name: Upload compliance bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-aivt2-report
+          path: reports/aivt2
+          retention-days: 30
+
+      - name: Compliance summary
+        if: always()
+        run: |
+          echo "## Nightly AIVT2-aligned compliance" >> "$GITHUB_STEP_SUMMARY"
+          python3 - <<'PY'
+          import json
+          import pathlib
+          paths = sorted(pathlib.Path("reports/aivt2").glob("*/summary.json"))
+          if not paths:
+            print("- No summary.json found.")
+            raise SystemExit(0)
+          data = json.loads(paths[-1].read_text(encoding="utf-8"))
+          print(f"- Status: **{data['status']}**")
+          rc = data["run_context"]
+          print(f"- Run ID: `{rc['run_id']}`")
+          for name in ("fairness", "explainability", "robustness"):
+            section = data["sections"][name]
+            print(f"- {name.title()}: **{section['status']}**")
+          PY

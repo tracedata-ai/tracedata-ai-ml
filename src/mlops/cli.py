@@ -4,6 +4,7 @@ Unified MLOps entrypoint.
   uv run tracedata-mlops production   # 3-feature synthetic windows → MLflow
   uv run tracedata-mlops synthetic   # 18-feature research pipeline
   uv run tracedata-mlops sqlite      # Train from telemetry.db (3 features)
+  uv run tracedata-mlops compliance  # AIVT2-aligned fairness/xai/robustness checks
 """
 
 from __future__ import annotations
@@ -30,6 +31,10 @@ def main(argv: list[str] | None = None) -> int:
         "sqlite",
         help="Train from SQLite trips (processor + trainer path)",
     )
+    sub.add_parser(
+        "compliance",
+        help="Run AIVT2-aligned nightly compliance checks against latest MLflow run",
+    )
 
     args = parser.parse_args(argv)
 
@@ -45,6 +50,10 @@ def main(argv: list[str] | None = None) -> int:
         from src.utils.trainer import train_model
 
         train_model()
+    elif args.command == "compliance":
+        from src.compliance.aivt2_runner import main as compliance_main
+
+        compliance_main()
     else:
         parser.error("unknown command")
         return 2

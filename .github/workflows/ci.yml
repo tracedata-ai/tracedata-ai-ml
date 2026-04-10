@@ -78,3 +78,37 @@ jobs:
             --cov-fail-under=0 \
             --junitxml=pytest-junit.xml \
             tests/
+
+  compliance-smoke:
+    name: Compliance smoke (AIVT2-aligned)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        run: uv python install ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies (dev)
+        run: uv sync --frozen --extra dev
+
+      - name: Run compliance smoke check
+        run: |
+          uv run python -m src.compliance.aivt2_runner \
+            --tracking-uri ./mlruns \
+            --experiment-name smoothness-10min-production \
+            --output-dir reports/aivt2 \
+            --eval-samples 200 \
+            --explainability-max-mean-additivity-error 1e-4
+
+      - name: Upload compliance smoke artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-aivt2-smoke-report
+          path: reports/aivt2
+          retention-days: 14
