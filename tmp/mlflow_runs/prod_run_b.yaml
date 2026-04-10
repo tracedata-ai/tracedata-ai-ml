@@ -1,0 +1,28 @@
+mlflow:
+  tracking_uri: auto
+  experiment_name: smoothness-10min-production
+
+training:
+  n_samples: 2400
+  test_size: 0.2
+  random_seed: 22
+  window_minutes: 10
+  background_rows: 96
+  model_output_path: models/smoothness_model_run_b.joblib
+
+registry:
+  register: false
+  model_name: smoothness_10min_xgb
+
+model:
+  xgboost:
+    n_estimators: 140
+    learning_rate: 0.09
+    max_depth: 5
+    random_state: 22
+    objective: reg:squarederror
+  quality_gate:
+    min_r2_score: 0.75
+
+output:
+  reports_dir: reports

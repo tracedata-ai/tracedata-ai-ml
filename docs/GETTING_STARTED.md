@@ -32,20 +32,13 @@ uv sync
 
 ### Where MLflow stores data (default)
 
-By default everything lives under a **single project folder**:
+By default this repo uses local file-store tracking at:
 
 | Path | Purpose |
 |------|--------|
-| `mlflow/mlflow.db` | SQLite **tracking** backend (runs, params, metrics) |
-| `mlflow/artifacts/` | **Artifacts** for each run (models, `serving/`, etc.) |
+| `mlruns/` | MLflow runs + artifacts (models, `serving/`, params, metrics) |
 
-Override if needed: `MLFLOW_TRACKING_URI`, `MLFLOW_ROOT`, or `MLFLOW_ARTIFACT_ROOT` (see `src/mlops/mlflow_settings.py`).
-
-If you already have **`mlflow.db` in the repo root**, either move it into the dedicated folder (`mlflow/mlflow.db`) or point tracking at the old file:
-
-`MLFLOW_TRACKING_URI=sqlite:///D:/full/path/to/your/mlflow.db` (adjust path; use forward slashes after `sqlite:///`).
-
-`uv run mlflow ui` uses the same URI automatically if you pass it: `uv run mlflow ui --backend-store-uri sqlite:///D:/path/to/mlflow/mlflow.db`.
+Override if needed with `MLFLOW_TRACKING_URI` (for example a remote MLflow server).
 
 ---
 
@@ -95,13 +88,15 @@ uv run mlflow ui
 
 Open a browser at **http://127.0.0.1:5000** (or the URL printed in the terminal).  
 You should see experiment **smoothness-10min-production** and your run.  
+Open the experiment, then the **Traces** tab to see nested spans for synthetic data, train/test split, XGBoost fit, and evaluation (enabled by `mlflow.enable_tracing` in `production_mlops.yaml`). For demos you can force full sampling with `MLFLOW_TRACE_SAMPLING_RATIO=1.0` before training.  
+To compare several runs, use the **Parallel coordinates** chart; what the axes mean and how to read “better” vs “worse” is explained in **[MLFLOW_PARALLEL_COORDINATES.md](MLFLOW_PARALLEL_COORDINATES.md)**.  
 Use **Ctrl+C** in that terminal to stop the UI.
 
 ---
 
 ## Step 5 — Run one prediction in Python (ping path, 3 features)
 
-Replace `YOUR_RUN_ID` with the `run_id` from Step 3. Use the same **MLflow tracking URI** you configured (often `sqlite:///.../mlflow/mlflow.db` — see Step 1).
+Replace `YOUR_RUN_ID` with the `run_id` from Step 3. Use the same tracking URI (default: `./mlruns`).
 
 ```bash
 uv run python -c "
@@ -109,7 +104,7 @@ from src.inference import SmoothnessInference
 from src.utils.simulator import generate_telemetry
 
 run_id = 'YOUR_RUN_ID'
-tracking_uri = 'sqlite:///D:/path/to/tracedata-ai-ml/mlflow/mlflow.db'  # adjust
+tracking_uri = './mlruns'
 inf = SmoothnessInference.from_run(run_id, tracking_uri)
 # One trip = one or more 10-minute windows; here a single window:
 window = generate_telemetry('smooth', duration_minutes=10)
