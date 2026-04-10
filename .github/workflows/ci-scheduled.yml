@@ -1,5 +1,5 @@
 # Full test sweep on a schedule (same tests as CI; integration still skips without API).
-name: "CI — scheduled test sweep"
+name: "CI: scheduled test sweep"
 
 on:
   schedule:

@@ -1,5 +1,5 @@
 # CI for tracedata-ai-ml: small ML package (MLflow for experiments; no Docker / model registry in CI).
-name: "CI - basic checks"
+name: "CI: basic checks"
 
 on:
   push:
