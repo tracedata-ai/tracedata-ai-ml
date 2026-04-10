@@ -14,6 +14,7 @@ from src.core.config import (
     MLFLOW_EXPERIMENT_SQLITE,
     MLFLOW_TRACKING_URI,
     SMOOTHNESS_MODEL_PATH,
+    ensure_mlflow_experiment,
 )
 from src.core.model_contract import SMOOTHNESS_FEATURE_COLUMNS
 from src.mlops.mlflow_common import log_serving_artifacts, log_xgboost_model, maybe_register_model
@@ -76,7 +77,7 @@ def train_model():
     }
 
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-    mlflow.set_experiment(MLFLOW_EXPERIMENT_SQLITE)
+    ensure_mlflow_experiment(MLFLOW_EXPERIMENT_SQLITE)
 
     model = None
     run_id = None

@@ -141,6 +141,7 @@ from src.core.config import (
     MLFLOW_EXPERIMENT_ML_ENGINE,
     MLFLOW_TRACKING_URI,
     SMOOTHNESS_MODEL_PATH,
+    ensure_mlflow_experiment,
 )
 from src.core.explain import TripExplainer
 from src.mlops.mlflow_common import log_serving_artifacts, log_xgboost_model
@@ -539,7 +540,7 @@ def train_smoothness_model(
     }
 
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-    mlflow.set_experiment(MLFLOW_EXPERIMENT_ML_ENGINE)
+    ensure_mlflow_experiment(MLFLOW_EXPERIMENT_ML_ENGINE)
 
     model: Optional[xgb.XGBRegressor] = None
     with mlflow.start_run() as run:

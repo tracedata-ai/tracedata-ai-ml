@@ -2,7 +2,7 @@
 # Telematics-style aggregates — not the same as production 3-feature scoring.
 
 mlflow:
-  tracking_uri: ./mlruns
+  tracking_uri: auto
   experiment_name: smoothness-scoring-synthetic-18f
 
 experiment:

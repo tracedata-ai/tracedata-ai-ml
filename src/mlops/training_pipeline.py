@@ -37,6 +37,7 @@ from sklearn.model_selection import cross_val_score
 
 from src.core.smoothness_ml_engine import generate_synthetic_labels
 from src.mlops.mlflow_common import log_serving_artifacts, log_xgboost_model
+from src.mlops.mlflow_settings import ensure_mlflow_experiment, resolve_tracking_uri
 from src.utils.data_generation_strategy import (
     SyntheticDataPipeline,
 )
@@ -85,12 +86,12 @@ class MLOpsTrainingPipeline:
 
     def _setup_mlflow(self):
         """Configure MLflow (env overrides YAML for CI / shared servers)."""
-        uri = os.environ.get("MLFLOW_TRACKING_URI") or self.mlflow_config["tracking_uri"]
+        uri = resolve_tracking_uri(self.mlflow_config["tracking_uri"])
         experiment = os.environ.get(
             "MLFLOW_EXPERIMENT_SYNTHETIC_18", self.mlflow_config["experiment_name"]
         )
         mlflow.set_tracking_uri(uri)
-        mlflow.set_experiment(experiment)
+        ensure_mlflow_experiment(experiment)
         logger.info("📊 MLflow tracking URI: %s", uri)
         logger.info("📊 MLflow experiment: %s", experiment)
 

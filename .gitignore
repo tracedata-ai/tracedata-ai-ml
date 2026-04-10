@@ -206,5 +206,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# MLflow local file store (regenerates from training)
+# MLflow local file store (legacy) and dedicated MLflow folder (sqlite + artifacts)
 mlruns/
+mlflow/

@@ -3,13 +3,16 @@
 #   or: uv run python -m src.mlops.production_window_training
 #
 # Env overrides (optional):
-#   MLFLOW_TRACKING_URI   — default: <project>/mlruns (see src/core/config.py)
+#   MLFLOW_TRACKING_URI — full URI (sqlite, file, http). If unset, see mlflow_settings.
+#   MLFLOW_ROOT — folder for default sqlite DB (default: <project>/mlflow/mlflow.db)
+#   MLFLOW_ARTIFACT_ROOT — where run artifacts go (default: <MLFLOW_ROOT>/artifacts)
 #   MLFLOW_EXPERIMENT_PRODUCTION — overrides experiment_name below
 #
-# Docker: mlflow artifacts download --run-id <RUN_ID> --artifact-path serving
+# tracking_uri: auto → SQLite under MLFLOW_ROOT + artifacts in MLFLOW_ARTIFACT_ROOT.
+# To use the old file store instead: set tracking_uri to ./mlruns (and no sqlite).
 
 mlflow:
-  tracking_uri: ./mlruns
+  tracking_uri: auto
   experiment_name: smoothness-10min-production
 
 training:

@@ -28,6 +28,7 @@ from sklearn.model_selection import train_test_split
 from src.core.features import extract_smoothness_features
 from src.core.model_contract import CONTRACT_VERSION, SMOOTHNESS_FEATURE_COLUMNS, smoothness_label_from_features
 from src.mlops.mlflow_common import log_serving_artifacts, log_xgboost_model, maybe_register_model
+from src.mlops.mlflow_settings import ensure_mlflow_experiment, resolve_tracking_uri
 from src.utils.simulator import generate_telemetry
 
 logging.basicConfig(
@@ -75,12 +76,12 @@ class ProductionWindowTrainingPipeline:
         self.output_cfg = self.config["output"]
 
     def run(self) -> Dict[str, Any]:
-        uri = os.environ.get("MLFLOW_TRACKING_URI") or self.mlflow_cfg["tracking_uri"]
+        uri = resolve_tracking_uri(self.mlflow_cfg.get("tracking_uri"))
         experiment = os.environ.get(
             "MLFLOW_EXPERIMENT_PRODUCTION", self.mlflow_cfg["experiment_name"]
         )
         mlflow.set_tracking_uri(uri)
-        mlflow.set_experiment(experiment)
+        ensure_mlflow_experiment(experiment)
 
         seed = int(self.train_cfg["random_seed"])
         n_samples = int(self.train_cfg["n_samples"])

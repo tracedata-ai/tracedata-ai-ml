@@ -11,9 +11,16 @@ DB_NAME = DB_PATH  # For sqlite3.connect()
 # --- MODEL CONFIG ---
 SMOOTHNESS_MODEL_PATH = MODEL_PATH
 
-# --- MLflow (override with env in CI / shared server) ---
-MLRUNS_DIR = os.path.join(PROJECT_ROOT, "mlruns")
-MLFLOW_TRACKING_URI = os.environ.get("MLFLOW_TRACKING_URI", MLRUNS_DIR)
+# --- MLflow (dedicated folder: see src/mlops/mlflow_settings.py) ---
+MLRUNS_DIR = os.path.join(PROJECT_ROOT, "mlruns")  # legacy file-store path only
+
+from src.mlops.mlflow_settings import (  # noqa: E402
+    MLFLOW_ROOT,
+    ensure_mlflow_experiment,
+    resolve_tracking_uri,
+)
+
+MLFLOW_TRACKING_URI = resolve_tracking_uri(None)
 # Experiments by training entrypoint
 MLFLOW_EXPERIMENT_PRODUCTION = os.environ.get(
     "MLFLOW_EXPERIMENT_PRODUCTION", "smoothness-10min-production"

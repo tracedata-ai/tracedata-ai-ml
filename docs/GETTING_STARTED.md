@@ -30,6 +30,23 @@ uv sync
 
 **Check:** no errors at the end.
 
+### Where MLflow stores data (default)
+
+By default everything lives under a **single project folder**:
+
+| Path | Purpose |
+|------|--------|
+| `mlflow/mlflow.db` | SQLite **tracking** backend (runs, params, metrics) |
+| `mlflow/artifacts/` | **Artifacts** for each run (models, `serving/`, etc.) |
+
+Override if needed: `MLFLOW_TRACKING_URI`, `MLFLOW_ROOT`, or `MLFLOW_ARTIFACT_ROOT` (see `src/mlops/mlflow_settings.py`).
+
+If you already have **`mlflow.db` in the repo root**, either move it into the dedicated folder (`mlflow/mlflow.db`) or point tracking at the old file:
+
+`MLFLOW_TRACKING_URI=sqlite:///D:/full/path/to/your/mlflow.db` (adjust path; use forward slashes after `sqlite:///`).
+
+`uv run mlflow ui` uses the same URI automatically if you pass it: `uv run mlflow ui --backend-store-uri sqlite:///D:/path/to/mlflow/mlflow.db`.
+
 ---
 
 ## Step 2 — Run the automated tests
