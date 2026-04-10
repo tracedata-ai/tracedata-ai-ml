@@ -1,6 +1,6 @@
 # Manual only: create a GitHub Release whose body is your release notes and whose assets are models/*.joblib.
 # No workflow artifacts, no zip. CI stays in .github/workflows/ci.yml.
-name: "Release — GitHub (model + notes)"
+name: "Release: GitHub (model + notes)"
 
 on:
   workflow_dispatch:
