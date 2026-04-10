@@ -21,6 +21,20 @@ on:
         description: "Run pytest (-m 'not integration') before publishing"
         type: boolean
         default: false
+      include_serving_files:
+        description: "Attach serving model_contract/background_features JSON files"
+        type: boolean
+        default: true
+      serving_contract_path:
+        description: "Path to model_contract.json (used when include_serving_files=true)"
+        required: false
+        type: string
+        default: "scripts/sample_serving/model_contract.json"
+      serving_background_path:
+        description: "Path to background_features.json (used when include_serving_files=true)"
+        required: false
+        type: string
+        default: "scripts/sample_serving/background_features.json"
 
 permissions:
   contents: write
@@ -51,19 +65,33 @@ jobs:
           uv sync --frozen --extra dev
           uv run pytest -v -m "not integration" tests/
 
-      - name: Verify model binaries
+      - name: Verify release assets
         id: models
         run: |
           set -euo pipefail
           shopt -s nullglob
-          files=(models/*.joblib)
-          if [ "${#files[@]}" -eq 0 ]; then
+          asset_files=(models/*.joblib)
+          if [ "${#asset_files[@]}" -eq 0 ]; then
             echo "::error::No models/*.joblib — commit your trained .joblib under models/ first."
             exit 1
           fi
+
+          if [ "${{ inputs.include_serving_files }}" = "true" ]; then
+            if [ ! -f "${{ inputs.serving_contract_path }}" ]; then
+              echo "::error::Missing serving contract: ${{ inputs.serving_contract_path }}"
+              exit 1
+            fi
+            if [ ! -f "${{ inputs.serving_background_path }}" ]; then
+              echo "::error::Missing serving background: ${{ inputs.serving_background_path }}"
+              exit 1
+            fi
+            asset_files+=("${{ inputs.serving_contract_path }}")
+            asset_files+=("${{ inputs.serving_background_path }}")
+          fi
+
           {
             echo "paths<<EOF"
-            printf '%s\n' "${files[@]}"
+            printf '%s\n' "${asset_files[@]}"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
