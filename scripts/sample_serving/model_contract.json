@@ -1,0 +1,10 @@
+{
+  "contract_version": "1.0",
+  "model_name": "smoothness_10min_xgb",
+  "feature_columns": [
+    "accel_fluidity",
+    "driving_consistency",
+    "comfort_zone_percent"
+  ],
+  "description": "Regression on 3 features from extract_smoothness_features() over a ping window (e.g. 10 minutes of ~30s samples)."
+}

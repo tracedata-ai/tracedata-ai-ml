@@ -1,0 +1,169 @@
+# Getting started (step by step)
+
+Follow these steps **in order** from the **project root** (`tracedata-ai-ml/` — the folder that contains `pyproject.toml`).
+
+Commands work in **PowerShell**, **cmd**, or **bash**. Use `Ctrl+C` if you need to stop a running server.
+
+---
+
+## Step 0 — Prerequisites
+
+1. **Python 3.11+** installed.
+2. **uv** (fast Python package manager). Install: [https://docs.astral.sh/uv/getting-started/installation/](https://docs.astral.sh/uv/getting-started/installation/)
+3. This repo cloned or unzipped on your machine.
+
+Open a terminal and go to the project root:
+
+```bash
+cd path/to/tracedata-ai-ml
+```
+
+---
+
+## Step 1 — Install dependencies
+
+This creates/uses `.venv` and installs packages from `pyproject.toml` / `uv.lock`:
+
+```bash
+uv sync
+```
+
+**Check:** no errors at the end.
+
+### Where MLflow stores data (default)
+
+By default everything lives under a **single project folder**:
+
+| Path | Purpose |
+|------|--------|
+| `mlflow/mlflow.db` | SQLite **tracking** backend (runs, params, metrics) |
+| `mlflow/artifacts/` | **Artifacts** for each run (models, `serving/`, etc.) |
+
+Override if needed: `MLFLOW_TRACKING_URI`, `MLFLOW_ROOT`, or `MLFLOW_ARTIFACT_ROOT` (see `src/mlops/mlflow_settings.py`).
+
+If you already have **`mlflow.db` in the repo root**, either move it into the dedicated folder (`mlflow/mlflow.db`) or point tracking at the old file:
+
+`MLFLOW_TRACKING_URI=sqlite:///D:/full/path/to/your/mlflow.db` (adjust path; use forward slashes after `sqlite:///`).
+
+`uv run mlflow ui` uses the same URI automatically if you pass it: `uv run mlflow ui --backend-store-uri sqlite:///D:/path/to/mlflow/mlflow.db`.
+
+---
+
+## Step 2 — Run the automated tests
+
+```bash
+uv run pytest tests/ -q
+```
+
+**What you should see:** most tests **passed** and **`1 skipped`**.  
+The skipped test is the **integration** API test (it needs a server on port 8000). That is expected.
+
+---
+
+## Step 3 — Train the production smoothness model (recommended path)
+
+This pipeline matches how scoring works in code: **10-minute style windows** of pings → **3 features** → XGBoost. It logs to **MLflow** and saves a joblib model.
+
+```bash
+uv run python -m src.mlops.production_window_training
+```
+
+Or the same pipeline via the CLI:
+
+```bash
+uv run tracedata-mlops production
+```
+
+**Wait** until it finishes (it may take a minute).
+
+**What to look for in the log:**
+
+- `Done. run_id=...` — copy this **run ID**; you will use it in Step 5.
+- `Saved model to ...\models\smoothness_model.joblib` — appears if the quality gate passed.
+
+Config lives in **`production_mlops.yaml`** (experiment name, sample counts, MLflow URI, etc.).
+
+---
+
+## Step 4 (optional) — Open the MLflow UI
+
+In a **second** terminal, from the same project root:
+
+```bash
+uv run mlflow ui
+```
+
+Open a browser at **http://127.0.0.1:5000** (or the URL printed in the terminal).  
+You should see experiment **smoothness-10min-production** and your run.  
+Use **Ctrl+C** in that terminal to stop the UI.
+
+---
+
+## Step 5 — Run one prediction in Python (ping path, 3 features)
+
+Replace `YOUR_RUN_ID` with the `run_id` from Step 3. Use the same **MLflow tracking URI** you configured (often `sqlite:///.../mlflow/mlflow.db` — see Step 1).
+
+```bash
+uv run python -c "
+from src.inference import SmoothnessInference
+from src.utils.simulator import generate_telemetry
+
+run_id = 'YOUR_RUN_ID'
+tracking_uri = 'sqlite:///D:/path/to/tracedata-ai-ml/mlflow/mlflow.db'  # adjust
+inf = SmoothnessInference.from_run(run_id, tracking_uri)
+# One trip = one or more 10-minute windows; here a single window:
+window = generate_telemetry('smooth', duration_minutes=10)
+print(inf.score_trip_from_ping_windows([window]))
+"
+```
+
+**What you get:** `trip_smoothness_score` and `explanation` (aggregated feature attributions, worst window index, etc.).  
+For a **single** window, `score_window(pings)` still returns the older `{smoothness_score, features, shap, ...}` shape — same math.
+
+**Not this path?** If your service ingests **device `smoothness_log` JSON** instead of pings, read **[SCORING_PATHS.md](SCORING_PATHS.md)** and use **`DeviceAggregateTripScorer`** with the **18-feature** training run.
+
+---
+
+## Step 6 (optional) — SQLite playground (trips in a local database)
+
+This is the **older** path: fill SQLite, extract features, train with `trainer.py`. Useful to understand `scoring.py` and the demo DB.
+
+**6a — Create DB and fake trips**
+
+```bash
+uv run python -c "from src.utils.simulator import init_db, simulate_data; init_db(); simulate_data(num_drivers=3, trips_per_driver=5)"
+```
+
+**6b — Compute features from telemetry into the `trips` table**
+
+```bash
+uv run python -m src.utils.processor
+```
+
+**6c — Train and save `models/smoothness_model.joblib` (uses trips in DB)**
+
+```bash
+uv run python -m src.utils.trainer
+```
+
+If you see “Not enough data”, run **6a** again with more drivers/trips, then **6b** and **6c**.
+
+---
+
+## Step 7 — Where to go next
+
+- **Explain 3 vs 18 features to anyone:** [SCORING_PATHS.md](SCORING_PATHS.md).
+- **Deploy / another repo:** root `README.md` and MLflow `serving/` (`model_contract.json`, `background_features.json`) — must match the path you trained (3- or 18-feature).
+- **Second training mode (18 aggregate features):** `uv run python -m src.mlops.training_pipeline` / `tracedata-mlops synthetic` and `mlops_config.yaml` — [MLOPS_GUIDE.md](MLOPS_GUIDE.md).
+- **Concepts (long read):** [strategy.md](strategy.md).
+
+---
+
+## Troubleshooting
+
+| Problem | What to try |
+|--------|-------------|
+| `uv: command not found` | Install uv (Step 0) and reopen the terminal. |
+| `ModuleNotFoundError: src` | Run commands from the **project root**, not inside `src/`. |
+| `from_run` cannot find run | Use the exact `run_id` from Step 3; ensure `production_mlops.yaml` has `tracking_uri: ./mlruns` and that folder exists after training. |
+| pytest fails on API test | Run `uv run pytest tests/ -q` — only the integration test needs a live API; skipped is OK. |
