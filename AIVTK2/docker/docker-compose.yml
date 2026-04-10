@@ -1,0 +1,123 @@
+name: aiverify
+services:
+  apigw:
+    image: "ghcr.io/aiverify-foundation/aiverify-apigw"
+    user: nonroot
+    ports:
+      - "${AIVT_APIGW_PORT:-4000}:4000"
+    volumes:
+      - apigw_data:/data
+    environment:
+      APIGW_LOG_LEVEL: "${AIVT_APIGW_LOG_LEVEL:-debug}"
+      APIGW_DATA_DIR: "/data"
+      APIGW_HOST_ADDRESS: "0.0.0.0"
+      VALKEY_HOST_ADDRESS: valkey
+    networks:
+      - aiverify_net
+
+  portal:
+    image: "ghcr.io/aiverify-foundation/aiverify-portal"
+    user: node
+    profiles:
+      - portal
+    depends_on:
+      - apigw
+    ports:
+      - "${AIVT_PORTAL_PORT:-3000}:3000"
+    environment:
+      APIGW_HOST: "http://apigw:4000"
+    networks:
+      - aiverify_net
+
+  valkey:
+    image: valkey/valkey:8-alpine
+    profiles:
+      - automated-tests-venv
+      - automated-tests-docker
+    ports:
+      - "${AIVT_VALKEY_PORT:-6379}:6379"
+    networks:
+      - aiverify_net
+
+  test-engine-worker-base:
+    image: "ghcr.io/aiverify-foundation/aiverify-test-engine-worker:latest-base"
+    profiles:
+      - build-only
+    networks:
+      - aiverify_net
+
+  test-engine-worker:
+    image: "ghcr.io/aiverify-foundation/aiverify-test-engine-worker:latest-venv"
+    user: appuser
+    profiles:
+      - automated-tests-venv
+    deploy:
+      mode: replicated
+      replicas: 3
+    depends_on:
+      - valkey
+    environment:
+      TEWORKER_LOG_LEVEL: "${AIVT_TEWORKER_LOG_LEVEL:-debug}"
+      APIGW_URL: "http://apigw:4000"
+      VALKEY_HOST_ADDRESS: valkey
+      PIPELINE_BUILD: virtual_env
+      PIPELINE_EXECUTE: virtual_env_execute
+    networks:
+      - aiverify_net
+
+  test-engine-worker-docker:
+    image: "ghcr.io/aiverify-foundation/aiverify-test-engine-worker:latest-docker"
+    user: root
+    profiles:
+      - automated-tests-docker
+    deploy:
+      mode: replicated
+      replicas: 3
+    depends_on:
+      - valkey
+    environment:
+      TEWORKER_LOG_LEVEL: "${AIVT_TEWORKER_LOG_LEVEL:-debug}"
+      APIGW_URL: "http://apigw:4000"
+      VALKEY_HOST_ADDRESS: valkey
+      PIPELINE_BUILD: docker_build
+      PIPELINE_EXECUTE: docker_run
+      WORKER_BASE_IMAGE: localhost:5000/aiverify-test-engine-worker-base
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    networks:
+      - aiverify_net
+
+  tracedata-aivt2-helper:
+    build:
+      context: ../..
+      dockerfile: AIVTK2/docker/Dockerfile
+    profiles:
+      - tracedata-helper
+    command:
+      [
+        "python",
+        "-m",
+        "src.compliance.aivt2_runner",
+        "--tracking-uri",
+        "./mlruns",
+        "--experiment-name",
+        "smoothness-10min-production",
+        "--output-dir",
+        "reports/aivt2",
+      ]
+    volumes:
+      - ../../:/workspace
+    working_dir: /workspace
+    networks:
+      - aiverify_net
+
+volumes:
+  apigw_data:
+    driver: local
+
+networks:
+  aiverify_net:
+    driver: bridge
+

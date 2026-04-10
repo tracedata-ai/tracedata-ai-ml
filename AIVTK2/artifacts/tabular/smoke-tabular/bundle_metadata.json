@@ -1,0 +1,31 @@
+{
+  "framework": "AIVT2 tabular input bundle",
+  "generated_at_utc": "2026-04-10T08:57:34.534546+00:00",
+  "bundle_name": "smoke-tabular",
+  "model": {
+    "path": "model\\smoothness_model.joblib",
+    "serialization": "joblib"
+  },
+  "datasets": {
+    "testing_dataset": "data\\testing_dataset.sav",
+    "ground_truth_dataset": "data\\ground_truth_dataset.sav",
+    "background_dataset": "data\\background_dataset.sav",
+    "serialization": "pickle (.sav)",
+    "target_column": "smoothness_label",
+    "feature_columns": [
+      "accel_fluidity",
+      "driving_consistency",
+      "comfort_zone_percent"
+    ],
+    "sensitive_columns_present_in_testing_data": [
+      "age",
+      "years_experience"
+    ]
+  },
+  "generation_config": {
+    "n_samples": 50,
+    "background_rows": 20,
+    "window_minutes": 10,
+    "random_seed": 42
+  }
+}

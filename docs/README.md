@@ -15,6 +15,7 @@ Then pick what you need:
 | [DATA_FLOW.md](DATA_FLOW.md) | Diagrams: pings → score; pointer to device path |
 | [SHAP_EXPLAINABILITY.md](SHAP_EXPLAINABILITY.md) | Why a score changed (contributions / “SHAP-style” breakdown) |
 | [AIVT2_COMPLIANCE.md](AIVT2_COMPLIANCE.md) | AIVT2-aligned compliance checks, results, CI/nightly flow |
+| [AIVT2_DOCKER_SETUP.md](AIVT2_DOCKER_SETUP.md) | Pointer to centralized `AIVTK2/` Docker setup |
 | [strategy.md](strategy.md) | Long beginner-friendly concepts: smoothness vs safety, steps in plain language |
 | [walkthrough.md](walkthrough.md) | Architecture (DB, agents, XAI) in one pass |
 | [ml_pipeline_guide.md](ml_pipeline_guide.md) | ML ideas explained using API/database analogies |
