@@ -10,6 +10,7 @@ Then pick what you need:
 | Document | What it is for |
 |----------|----------------|
 | [MLOPS_GUIDE.md](MLOPS_GUIDE.md) | MLflow, two training pipelines, metrics |
+| [AGENTIC_SCORING_DEPLOYMENT.md](AGENTIC_SCORING_DEPLOYMENT.md) | Release-to-runtime handoff for deploying model bundles in agentic scoring systems |
 | [FEATURE_ENGINEERING.md](FEATURE_ENGINEERING.md) | Column meanings: **3** ping features vs **18** device aggregates |
 | [DATA_FLOW.md](DATA_FLOW.md) | Diagrams: pings → score; pointer to device path |
 | [SHAP_EXPLAINABILITY.md](SHAP_EXPLAINABILITY.md) | Why a score changed (contributions / “SHAP-style” breakdown) |
