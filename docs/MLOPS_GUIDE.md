@@ -1,12 +1,14 @@
 # Complete MLOps Setup Guide
 
 > **Beginner path:** follow **[GETTING_STARTED.md](GETTING_STARTED.md)** end-to-end first.  
-> **Two training pipelines exist** — do not mix them up:
+> **Why two pipelines?** **[SCORING_PATHS.md](SCORING_PATHS.md)** — different **inputs** (pings vs device aggregates), different **models**. Do not mix artifacts.
 
-| Pipeline | Command | Config | Features |
-|----------|---------|--------|----------|
-| **Production (recommended)** | `uv run python -m src.mlops.production_window_training` | `production_mlops.yaml` | **3** (from `extract_smoothness_features`) |
-| **Research / synthetic trips** | `uv run python -m src.mlops.training_pipeline` | `mlops_config.yaml` | **18** (synthetic trip aggregates) |
+**Two training pipelines:**
+
+| Pipeline | Command | Config | Features | Inference class |
+|----------|---------|--------|----------|-------------------|
+| **Pings (default product)** | `uv run python -m src.mlops.production_window_training` / `tracedata-mlops production` | `production_mlops.yaml` | **3** | `SmoothnessInference` |
+| **Device-style aggregates** | `uv run python -m src.mlops.training_pipeline` / `tracedata-mlops synthetic` | `mlops_config.yaml` | **18** | `DeviceAggregateTripScorer` |
 
 Install tools with **`uv sync`** at the repo root; avoid relying on a manual `pip install` list unless you know you need it.
 

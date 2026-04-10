@@ -1,5 +1,6 @@
 # Explainability: score breakdown (“SHAP-style”)
 
+> **Which model?** **[SCORING_PATHS.md](SCORING_PATHS.md)** — ping (3 features) vs device (18 features).  
 > **Start here:** **[GETTING_STARTED.md](GETTING_STARTED.md)** — train once, then run the Step 5 snippet.
 
 Additive explanations answer: *“Which inputs pushed the score up or down, versus a baseline?”*  
@@ -7,18 +8,15 @@ For **tree models** (XGBoost), the **`shap` Python library** and **XGBoost `pred
 
 ---
 
-## Path 1 — Production inference (recommended for your main app)
+## Path 1 — Ping inference (`SmoothnessInference`, 3 features)
 
 **Module:** `src/inference/smoothness_inference.py`  
 **Class:** `SmoothnessInference`
 
 - Builds **3 features** from pings via `extract_smoothness_features()`.
 - Uses **XGBoost `pred_contribs`** for per-feature contributions (works well with **XGBoost 3.x** and MLflow-loaded models).
-- Returns a dict from `score_window(pings)`:
-  - `smoothness_score`
-  - `features`
-  - `shap` — contributions for `accel_fluidity`, `driving_consistency`, `comfort_zone_percent`
-  - `shap_base_value` — bias term (last column of `pred_contribs`)
+- **Trip-level (recommended):** `score_trip_from_ping_windows(windows)` → `trip_smoothness_score` and `explanation.feature_attributions` / `base_value` (weighted across windows; see `explanation.method`).
+- **Single window (legacy shape):** `score_window(pings)` → `smoothness_score`, `features`, `shap`, `shap_base_value`.
 
 **Load from MLflow:**
 
@@ -51,10 +49,11 @@ Uses **`shap.TreeExplainer`** on the XGBoost model and a background sample from 
 
 ---
 
-## Path 3 — `ExplainableScoringEngine` (18-feature engine)
+## Path 3 — 18-feature aggregates (`DeviceAggregateTripScorer` / `smoothness_ml_engine`)
 
-**Module:** `src/core/smoothness_ml_engine.py`  
-Used for the **richer synthetic / sample-based** scoring path (different feature set than Path 1). See docstrings there for `score_trip_from_samples_with_explanation`.
+**Serving:** `src/inference/device_trip_scorer.py` — **`DeviceAggregateTripScorer`** uses **`pred_contribs`** per window and aggregates for trip-level explanation (same idea as Path 1, different feature columns).
+
+**Legacy / DB-oriented:** `src/core/smoothness_ml_engine.py` (`ExplainableScoringEngine`, `TripExplainer` / SHAP in some flows) — see docstrings; prefer **`DeviceAggregateTripScorer`** for `smoothness_log`-shaped payloads. Overview: **[SCORING_PATHS.md](SCORING_PATHS.md)**.
 
 ---
 

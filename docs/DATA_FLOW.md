@@ -1,36 +1,63 @@
 # Data flow (short)
 
-> Read **[GETTING_STARTED.md](GETTING_STARTED.md)** to run the project step by step.
+> Read **[GETTING_STARTED.md](GETTING_STARTED.md)** to run the project.  
+> Read **[SCORING_PATHS.md](SCORING_PATHS.md)** for the full **3 vs 18 feature** story and which class to call.
 
-## Production path (what this repo trains by default)
+---
 
-This matches **`src.mlops.production_window_training`**, **`src.core.features`**, and **`src.inference.SmoothnessInference`**.
+## Path A — Pings → 3 features (default product path)
+
+Matches **`production_window_training`**, **`extract_smoothness_features`**, **`SmoothnessInference`**.
+
+**Trip API:** `score_trip_from_ping_windows(windows)` — each inner list is pings for one ~10-minute bucket; output is **one** `trip_smoothness_score` and **one** `explanation` (aggregated attributions).
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Pings in a time window (e.g. ~10 min, ~30 s spacing)      │
-│  Each ping: speed_kmh, acceleration_ms2, (+ optional GPS)     │
+│  Many windows × (pings in ~10 min, e.g. ~30 s spacing)      │
+│  Each ping: speed_kmh, acceleration_ms2 (+ optional GPS)    │
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  extract_smoothness_features() → 3 numbers                  │
-│  • accel_fluidity                                           │
-│  • driving_consistency                                      │
-│  • comfort_zone_percent                                     │
+│  Per window: extract_smoothness_features() → 3 numbers        │
+│  • accel_fluidity • driving_consistency • comfort_zone_%      │
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  XGBoost regressor → smoothness_score (0–100)               │
-│  + per-feature contributions (XGBoost pred_contribs)       │
+│  XGBoost per window → score; weighted mean → trip score       │
+│  + aggregated pred_contribs → single trip explanation         │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**Safety scoring** (rule-based, separate from the ML model) uses **`detect_safety_events()`** on the same pings. **`ScoringService`** in `src/core/scoring.py` combines smoothness + safety for trip scoring against SQLite.
+**Safety (rules, not this XGBoost model):** `detect_safety_events()` on pings. **`ScoringService`** (`src/core/scoring.py`) can combine smoothness + safety against SQLite for demos.
 
-## Research / alternate path (18 features)
+---
 
-**`src.mlops.training_pipeline`** builds synthetic **trip-level** tables with **18** aggregated columns (see `src/utils/data_generation_strategy.py`). That model is **not** the same as the 3-feature production model. Use it for experiments only unless you align serving code to those 18 columns.
+## Path B — Device `smoothness_log` → 18 features
 
-## Older “device event” diagram
+Matches **`training_pipeline`** (synthetic rows with the same column names), **`parse_telematics_event`**, **`DeviceAggregateTripScorer`**.
 
-Some older docs describe a rich 18-field **device payload** (longitudinal, lateral, RPM, etc.). That is a **design reference** for future ingestion. The **current** training + serving contract for smoothness in this repo is the **3-feature** path above unless you explicitly use the 18-feature pipeline.
+**Trip API:** `score_trip_at_end(envelopes)` — one envelope per ~10-minute device aggregate; **one** trip score and aggregated explanation.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Per window: smoothness_log JSON (details.speed, .jerk, …)   │
+└───────────────────────────┬─────────────────────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│  Row aligned to 18 training columns (device_window_features)  │
+└───────────────────────────┬─────────────────────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│  XGBoost per window → weighted trip score + attributions     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+Example payload shape: see the JSON block at the top of the root **`README.md`** (illustrative device event).
+
+---
+
+## Do not mix paths
+
+A model trained on **3** features only accepts ping-derived inputs via **`SmoothnessInference`**.  
+A model trained on **18** aggregate columns only accepts device-style rows via **`DeviceAggregateTripScorer`**.  
+Check **`serving/model_contract.json`** `feature_columns` after each MLflow run.

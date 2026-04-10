@@ -2,7 +2,21 @@
 
 Vehicle telematics smoothness scoring with XGBoost and per-feature attribution (XGBoost `pred_contribs`, same additive decomposition as SHAP for trees).
 
-// 3 — SMOOTHNESS LOG EVENT (20 min mark)
+## Two scoring paths (read this first)
+
+| | **Pings → 3 features** | **Device aggregates → 18 features** |
+|--|-------------------------|--------------------------------------|
+| **When** | Backend has **raw pings** (`acceleration_ms2`, `speed_kmh`) | Device sends **`smoothness_log`**-style JSON (or you train on the same 18 columns) |
+| **Train** | `production_window_training` / `tracedata-mlops production` | `training_pipeline` / `tracedata-mlops synthetic` |
+| **Score** | `SmoothnessInference.score_trip_from_ping_windows(windows)` | `DeviceAggregateTripScorer.score_trip_at_end(envelopes)` |
+
+Full narrative: **[docs/SCORING_PATHS.md](docs/SCORING_PATHS.md)**.
+
+---
+
+### Example: device `smoothness_log` payload (Path B / 18-feature world)
+
+Illustrative JSON — **not** used by the 3-feature ping model:
 ```
 {
   "batch_id": "BAT-6ba7b815-9dad-11d1-80b4-00c04fd430c8",
@@ -68,24 +82,27 @@ Vehicle telematics smoothness scoring with XGBoost and per-feature attribution (
 }
 ```
 
-## Core capability
+## Core capability (Path A — pings)
 
-**Score smoothness (0–100)** from a window of pings (e.g. 10 minutes), plus a feature breakdown.
+**One trip** = a list of **10-minute ping windows** → **one** smoothness score and **one** explanation.
 
 ```python
 from src.inference import SmoothnessInference
 from src.utils.simulator import generate_telemetry
 
-# After training: joblib on disk + serving/ inside the MLflow run (or download both for Docker).
-inf = SmoothnessInference.from_run("<mlflow_run_id>", "./mlruns")
-# Or: SmoothnessInference.from_local_paths("models/smoothness_model.joblib", Path("path/to/serving"))
-
-pings = generate_telemetry("smooth", duration_minutes=10)
-result = inf.score_window(pings)
-# result["smoothness_score"], result["features"], result["shap"], result["shap_base_value"]
+inf = SmoothnessInference.from_local_paths(
+    "models/smoothness_model.joblib",
+    "path/to/serving",  # from MLflow run artifacts
+)
+w1 = generate_telemetry("smooth", duration_minutes=10)
+w2 = generate_telemetry("smooth", duration_minutes=10)
+result = inf.score_trip_from_ping_windows([w1, w2])
+# result["trip_smoothness_score"], result["explanation"]
 ```
 
-Or load from an MLflow run: `SmoothnessInference.from_run(run_id, tracking_uri="./mlruns")`.
+CLI-style demo: `uv run python scripts/score_10min_window.py`.
+
+**Path B** (device JSON): `DeviceAggregateTripScorer` — see [docs/SCORING_PATHS.md](docs/SCORING_PATHS.md).
 
 ## Layout
 
@@ -97,7 +114,8 @@ src/
 │   ├── scoring.py               # Trip DB scoring
 │   └── explain.py               # Legacy SHAP/LIME helpers
 ├── inference/
-│   └── smoothness_inference.py  # Production-style score_window()
+│   ├── smoothness_inference.py   # Pings → 3 features → score_trip_from_ping_windows
+│   └── device_trip_scorer.py     # smoothness_log → 18 features → score_trip_at_end
 ├── mlops/
 │   ├── production_window_training.py  # 3-feature model → MLflow (use this for deploy)
 │   └── training_pipeline.py           # 18-feature synthetic pipeline (research)
@@ -144,8 +162,9 @@ uv run pytest tests/ -v
 
 ## Documentation
 
-1. **[docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)** — step-by-step (start here)
-2. **[docs/README.md](docs/README.md)** — full doc index
+1. **[docs/SCORING_PATHS.md](docs/SCORING_PATHS.md)** — **3 vs 18 features** (how to describe the system)
+2. **[docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)** — step-by-step (start here)
+3. **[docs/README.md](docs/README.md)** — full doc index
 
 ## Configuration
 

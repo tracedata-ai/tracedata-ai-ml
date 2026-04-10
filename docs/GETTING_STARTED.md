@@ -55,7 +55,7 @@ If you already have **`mlflow.db` in the repo root**, either move it into the de
 uv run pytest tests/ -q
 ```
 
-**What you should see:** `13 passed` and **`1 skipped`**.  
+**What you should see:** most tests **passed** and **`1 skipped`**.  
 The skipped test is the **integration** API test (it needs a server on port 8000). That is expected.
 
 ---
@@ -99,9 +99,9 @@ Use **Ctrl+C** in that terminal to stop the UI.
 
 ---
 
-## Step 5 — Run one prediction in Python
+## Step 5 — Run one prediction in Python (ping path, 3 features)
 
-Replace `YOUR_RUN_ID` with the `run_id` from Step 3.
+Replace `YOUR_RUN_ID` with the `run_id` from Step 3. Use the same **MLflow tracking URI** you configured (often `sqlite:///.../mlflow/mlflow.db` — see Step 1).
 
 ```bash
 uv run python -c "
@@ -109,13 +109,18 @@ from src.inference import SmoothnessInference
 from src.utils.simulator import generate_telemetry
 
 run_id = 'YOUR_RUN_ID'
-inf = SmoothnessInference.from_run(run_id, './mlruns')
-pings = generate_telemetry('smooth', duration_minutes=10)
-print(inf.score_window(pings))
+tracking_uri = 'sqlite:///D:/path/to/tracedata-ai-ml/mlflow/mlflow.db'  # adjust
+inf = SmoothnessInference.from_run(run_id, tracking_uri)
+# One trip = one or more 10-minute windows; here a single window:
+window = generate_telemetry('smooth', duration_minutes=10)
+print(inf.score_trip_from_ping_windows([window]))
 "
 ```
 
-**What you get:** a dict with `smoothness_score`, `features`, `shap` (per-feature contributions), and `shap_base_value`.
+**What you get:** `trip_smoothness_score` and `explanation` (aggregated feature attributions, worst window index, etc.).  
+For a **single** window, `score_window(pings)` still returns the older `{smoothness_score, features, shap, ...}` shape — same math.
+
+**Not this path?** If your service ingests **device `smoothness_log` JSON** instead of pings, read **[SCORING_PATHS.md](SCORING_PATHS.md)** and use **`DeviceAggregateTripScorer`** with the **18-feature** training run.
 
 ---
 
@@ -147,8 +152,9 @@ If you see “Not enough data”, run **6a** again with more drivers/trips, then
 
 ## Step 7 — Where to go next
 
-- **Deploy / another repo:** see root `README.md` and `serving/` artifacts logged by Step 3 (`model_contract.json`, `background_features.json`).
-- **Second training mode (18 synthetic features):** `uv run python -m src.mlops.training_pipeline` and `mlops_config.yaml` — explained in [MLOPS_GUIDE.md](MLOPS_GUIDE.md).
+- **Explain 3 vs 18 features to anyone:** [SCORING_PATHS.md](SCORING_PATHS.md).
+- **Deploy / another repo:** root `README.md` and MLflow `serving/` (`model_contract.json`, `background_features.json`) — must match the path you trained (3- or 18-feature).
+- **Second training mode (18 aggregate features):** `uv run python -m src.mlops.training_pipeline` / `tracedata-mlops synthetic` and `mlops_config.yaml` — [MLOPS_GUIDE.md](MLOPS_GUIDE.md).
 - **Concepts (long read):** [strategy.md](strategy.md).
 
 ---
